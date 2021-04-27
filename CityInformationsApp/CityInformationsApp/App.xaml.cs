@@ -1,8 +1,4 @@
-﻿using CityInformationsApp.Services;
-using CityInformationsApp.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace CityInformationsApp
 {
@@ -12,8 +8,6 @@ namespace CityInformationsApp
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
