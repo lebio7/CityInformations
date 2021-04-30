@@ -21,26 +21,22 @@
 
     <TabBar>
 
-        <ShellContent Title="Start"
+        <ShellContent Title="Aktualności" 
                       Icon="icon_about"
                       ContentTemplate="{DataTemplate local:HomePage}"/>
-        
 
-        <!--<ShellContent Title="Wydarzenia"
-                      Icon="icon_about"
-                      ContentTemplate="{DataTemplate local:Events}"/>
 
-        <ShellContent Title="Lista"
-                      Icon="icon_about"
-                      ContentTemplate="{DataTemplate local:ListElement}"/>
+        <ShellContent Title="Wydarzenia"
+                      Icon="icon_about"/>
 
-        <ShellContent Title="Mapa"
-                      Icon="icon_about"
-                      ContentTemplate="{DataTemplate local:Map}"/>
+        <ShellContent Title="Obiekty"
+                      Icon="icon_about"/>
 
-        <ShellContent Title="Informacje"
-                      Icon="icon_about"
-                      ContentTemplate="{DataTemplate local:AboutPage}"/>-->
+        <ShellContent Title="Mapa Miasta"
+                      Icon="icon_about"/>
+
+        <ShellContent Title="O mieście"
+                      Icon="icon_about"/>
 
     </TabBar>
 

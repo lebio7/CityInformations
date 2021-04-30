@@ -3,10 +3,90 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CityInformationsApp.Views.HomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid Padding="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <!--pogoda-->
+                    <RowDefinition Height="auto"/>
+                    <!--zdjecia-->
+                    <RowDefinition Height="auto"/>
+                    <!--Aktualnosci-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!--pogoda-->
+            <Grid Grid.Row="0"  Margin="8,2,8,4" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Margin="0"  WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center" Source="{Binding LogoCity}"/>
+
+                <StackLayout Grid.Column="1" Padding="0" Margin="0" VerticalOptions="Start" >
+                    <Label  Text="Pogoda" FontSize="13" TextColor="Black" HorizontalTextAlignment="Start" FontAttributes="Bold"/>
+                    <Label  Text="Temperatura: 20C" TextColor="Black" FontSize="12" HorizontalTextAlignment="Start"/>
+                    <Label  Text="Szansa opadów: 20%" TextColor="Black" FontSize="12" HorizontalTextAlignment="Start"/>
+                    <Label  Text="Wiatr: 2m/s" TextColor="Black" FontSize="12" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+            </Grid>
+            
+            <!--zdjecia-->
+            <Image Grid.Row="1" Margin="0" Source="{Binding RandomImage}"/>
+
+            <!--Aktualnosci-->
+                <StackLayout Grid.Row="2"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="Newsy" FontSize="13" TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <ListView
+                         x:Name="ItemsListView"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         SelectionMode="None"
+                         ItemsSource="{Binding NewsList}"
+                         HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="True">
+                                    <Frame
+                                        BackgroundColor="white"
+                                        BorderColor="Black"
+                                        Margin="8,4,8,4"
+                                        Padding="2">
+                                        <Grid Margin="8, 2, 8, 0" Padding="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                                <ColumnDefinition Width="70*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            
+                                            <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="0" TextColor="Black" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="12"/>
+
+                                            <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                                <Image   VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Source="{Binding LeftImage}" ></Image>
+                                                <Label Text="{Binding ShortDescription}" TextColor="#161616"   FontSize="11" HorizontalTextAlignment="Start"/>
+                                            </StackLayout>
+
+                                            <Label Text="{Binding CreatedDate}" Grid.Row="2" Grid.Column="0" TextColor="Gray" LineBreakMode="WordWrap" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" FontSize="10" />
+                                            <Label Text="Zobacz Więcej..."  Grid.Row="2" Grid.Column="1" TextColor="Black" VerticalTextAlignment="end" HorizontalTextAlignment="end" FontSize="10" FontAttributes="Italic">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command ="{Binding ReadMore}"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                </StackLayout>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

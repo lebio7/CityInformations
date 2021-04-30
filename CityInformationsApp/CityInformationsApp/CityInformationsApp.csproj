@@ -6,12 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\DefaultImage.png" />
+    <None Remove="Resources\Images\RandomSiewierz1.png" />
+    <None Remove="Resources\Images\SiewierzLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\DefaultImage.png" />
+    <EmbeddedResource Include="Resources\Images\RandomSiewierz1.png" />
+    <EmbeddedResource Include="Resources\Images\SiewierzLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
