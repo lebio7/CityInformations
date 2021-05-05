@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:CityInformationsApp.Views"
        Title="CityInformationsApp"
@@ -9,10 +9,10 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="Black" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="black"/>
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="Red"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#f4fbff"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="black"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Black"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Primary}"/>
                 <Setter Property="Shell.NavBarIsVisible" Value="False"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
@@ -22,21 +22,20 @@
     <TabBar>
 
         <ShellContent Title="Aktualności" 
-                      Icon="icon_about"
+                      Icon="Home"
                       ContentTemplate="{DataTemplate local:HomePage}"/>
 
-
         <ShellContent Title="Wydarzenia"
-                      Icon="icon_about"/>
+                      Icon="Announcement"/>
 
-        <ShellContent Title="Obiekty"
-                      Icon="icon_about"/>
+        <ShellContent Title="Lokalizacje"
+                      Icon="Location"/>
 
-        <ShellContent Title="Mapa Miasta"
-                      Icon="icon_about"/>
+        <ShellContent Title="Mapa"
+                      Icon="Route"/>
 
         <ShellContent Title="O mieście"
-                      Icon="icon_about"/>
+                      Icon="About"/>
 
     </TabBar>
 

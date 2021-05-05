@@ -1,6 +1,8 @@
 ﻿using CityInformationsApp.Models;
 using CityInformationsApp.Utils;
+using CityInformationsApp.Views;
 using System.Reflection;
+using Xamarin.Forms;
 
 namespace CityInformationsApp
 {
@@ -12,8 +14,7 @@ namespace CityInformationsApp
 
             ApplicationModel applicationModel = new ApplicationModel(Assembly.GetAssembly(this.GetType()));
             BaseApplication.applicationModel = applicationModel;
-            //Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(InformationDetailsPage), typeof(InformationDetailsPage));
         }
 
     }

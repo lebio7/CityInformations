@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace CityInformationsApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        #region Members
+        private bool isGoBack = false;
+        #endregion
+
+        #region Properties
         bool isBusy = false;
         public bool IsBusy
         {
@@ -21,6 +28,31 @@ namespace CityInformationsApp.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        public ICommand GoBack { get; private set; }
+
+        #endregion
+
+        public BaseViewModel()
+        {
+            GoBack = new Command(
+            execute: () =>
+            {
+                isGoBack = true;
+                GoBackCommand();
+            },
+            canExecute: () =>
+            {
+                return !isGoBack;
+            });
+        }
+
+
+        private async void GoBackCommand()
+        {
+           await Shell.Current.Navigation.PopAsync();
+        }
+
+        #region NotifyPropertyChanged
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)
@@ -46,6 +78,8 @@ namespace CityInformationsApp.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
+
         #endregion
     }
 }

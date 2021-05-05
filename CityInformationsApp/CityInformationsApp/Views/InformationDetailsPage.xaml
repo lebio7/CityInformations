@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localImage="clr-namespace:CityInformationsApp.Utils"
+             x:Class="CityInformationsApp.Views.InformationDetailsPage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid Margin="8, 4, 8, 4" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <!--Navigation-->
+                <StackLayout Grid.Row="0"  Grid.Column="0" >
+                    <Image Source="{localImage:ImageResource GoBack}" Margin="4,0,0,0"  HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command ="{Binding GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+                <!--Zdjecie-->
+                <Image Source="{Binding InformationImage}" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                <StackLayout  Grid.Row="2" Grid.Column="0">
+                    <Label Text="{Binding DayOfEvent}" TextColor="{StaticResource Primary}" FontSize="13"/>
+                    <Label Text="{Binding TitleInformation}" Style="{StaticResource LabelBold}" FontSize="Large"/>
+
+                </StackLayout>
+
+                <StackLayout x:Name="Details" Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="4, 4, 4, 4">
+
+                </StackLayout>
+
+                <StackLayout  Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="4, 4, 4, 4">
+                    <Label Text="Szczegóły" FontSize="18" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Description}" TextColor="Gray" FontSize="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

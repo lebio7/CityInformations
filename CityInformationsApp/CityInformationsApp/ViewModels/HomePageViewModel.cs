@@ -1,5 +1,6 @@
 ﻿using CityInformationsApp.Models;
 using CityInformationsApp.Utils;
+using CityInformationsApp.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,7 +28,6 @@ namespace CityInformationsApp.ViewModels
             }
         }
 
-
         private ImageSource randomImage;
         public ImageSource RandomImage
         {
@@ -42,12 +42,26 @@ namespace CityInformationsApp.ViewModels
             }
         }
 
+        private string temperature;
+        public string Temperature
+        {
+            get
+            {
+                return temperature;
+            }
+            set
+            {
+                temperature = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Ctor
 
         public HomePageViewModel()
         {
+            Title = Constants.Siewierz;
             NewsList = new ObservableCollection<NewsModel>();
 
             PrepareData();
@@ -59,6 +73,7 @@ namespace CityInformationsApp.ViewModels
 
         private void PrepareData()
         {
+            Temperature = "10";
             LoadLogoCity();
             RandDefaultImage();
             LoadNewsCollection();
@@ -93,14 +108,18 @@ namespace CityInformationsApp.ViewModels
             foreach (NewsModel news in TestData.TestNewsList)
             {
                 NewsList.Add(news);
-                news.ReadMore = new Command(GoToReadMore);
+                news.ReadMore = new Command<object>(GoToReadMore);
             }
 
         }
 
-        private void GoToReadMore()
+        private async void GoToReadMore(object selectedItem)
         {
-            //ToDo przejscie do InformationDetailsView 
+            if (selectedItem is NewsModel news)
+            {
+                InformationDetailsPage page = new InformationDetailsPage(news.Title, TestData.TestLongDescription, news.SelectedEvent, Helper.GenerateInformationDetailsByNewModel(news), dayOfWeek: Helper.GetDayNameByDateText(news.DateEvent));
+                await Shell.Current.Navigation.PushModalAsync(page);
+            }
         }
 
         #endregion

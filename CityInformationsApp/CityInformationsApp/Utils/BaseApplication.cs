@@ -8,7 +8,6 @@ namespace CityInformationsApp.Utils
         #region Members
 
         public static ApplicationModel applicationModel;
-
         #endregion
 
         #region Methods

@@ -6,15 +6,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\Raleway-Regular.ttf" />
+    <None Remove="Resources\Fonts\Raleway-SemiBold.ttf" />
+    <None Remove="Resources\Images\Calendar.png" />
+    <None Remove="Resources\Images\Culture.png" />
     <None Remove="Resources\Images\DefaultImage.png" />
+    <None Remove="Resources\Images\DetailDot.png" />
+    <None Remove="Resources\Images\GoBack.png" />
+    <None Remove="Resources\Images\GoNext.png" />
+    <None Remove="Resources\Images\Location.png" />
+    <None Remove="Resources\Images\Price.png" />
     <None Remove="Resources\Images\RandomSiewierz1.png" />
     <None Remove="Resources\Images\SiewierzLogo.png" />
+    <None Remove="Resources\Images\Sports.png" />
+    <None Remove="Resources\Images\Tourism.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Raleway-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Raleway-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Images\Calendar.png" />
+    <EmbeddedResource Include="Resources\Images\Culture.png" />
     <EmbeddedResource Include="Resources\Images\DefaultImage.png" />
+    <EmbeddedResource Include="Resources\Images\DetailDot.png" />
+    <EmbeddedResource Include="Resources\Images\GoBack.png" />
+    <EmbeddedResource Include="Resources\Images\GoNext.png" />
+    <EmbeddedResource Include="Resources\Images\Location.png" />
+    <EmbeddedResource Include="Resources\Images\Price.png" />
     <EmbeddedResource Include="Resources\Images\RandomSiewierz1.png" />
     <EmbeddedResource Include="Resources\Images\SiewierzLogo.png" />
+    <EmbeddedResource Include="Resources\Images\Sports.png" />
+    <EmbeddedResource Include="Resources\Images\Tourism.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +50,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InformationDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
