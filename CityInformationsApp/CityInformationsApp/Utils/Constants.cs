@@ -29,12 +29,23 @@
             public const string Culture = nameof(Culture);
             public const string Sports = nameof(Sports);
             public const string Tourism = nameof(Tourism);
+            public const string EventsAll = nameof(EventsAll);
+            public const string EventsCulture = nameof(EventsCulture);
+            public const string EventsSport = nameof(EventsSport);
+            public const string EventsTourism = nameof(EventsTourism);
         }
 
         public class Extensions
         {
             public const string Zlotych = ".zł";
             public const string Street = "ul.";
+        }
+
+        public class ResourceNames
+        {
+            public const string FrameSort = nameof(FrameSort);
+            public const string ImageSort = nameof(ImageSort);
+            public const string LabelSortUnSelected = nameof(LabelSortUnSelected);
         }
     }
 }

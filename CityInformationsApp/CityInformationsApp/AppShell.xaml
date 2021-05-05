@@ -26,7 +26,8 @@
                       ContentTemplate="{DataTemplate local:HomePage}"/>
 
         <ShellContent Title="Wydarzenia"
-                      Icon="Announcement"/>
+                      Icon="Announcement"
+                      ContentTemplate="{DataTemplate local:AnnouncementsPage}"/>
 
         <ShellContent Title="Lokalizacje"
                       Icon="Location"/>

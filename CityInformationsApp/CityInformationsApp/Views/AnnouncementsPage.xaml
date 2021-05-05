@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localImage="clr-namespace:CityInformationsApp.Utils"
+             x:Class="CityInformationsApp.Views.AnnouncementsPage">
+    <ContentPage.Content>
+        <StackLayout Orientation ="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid Padding="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <!--Filtrowanie-->
+                    <RowDefinition Height="auto"/>
+                    <!--Lista-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="0, 8, 0, 0"  Grid.Row="0" >
+                    <FlexLayout Direction="Row" Wrap="Wrap"  AlignItems="Center" JustifyContent="SpaceBetween" Margin="4" x:Name="SortButtons">
+                    </FlexLayout>
+                </StackLayout>
+
+                <!--Wydarzenia-->
+                <StackLayout Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <ListView
+                         x:Name="ItemsListView"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         SelectionMode="None"
+                         ItemsSource="{Binding NewsList}"
+                         HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="True">
+                                    <Grid Margin="8, 2, 8, 0" Padding="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                                            <ColumnDefinition Width="70*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <BoxView HeightRequest="1" BackgroundColor="{StaticResource Primary}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                            <Frame CornerRadius="10" Padding="0" WidthRequest="100" HeightRequest="100" VerticalOptions="Center">
+                                                <Image  Aspect="AspectFill"  Source="{Binding LeftImage}" ></Image>
+                                            </Frame>
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                </Grid.RowDefinitions>
+
+                                                <Label Text="{Binding Title}" Grid.Row="0"  HorizontalTextAlignment="Center" FontSize="15" Style="{StaticResource LabelBold}"/>
+
+                                                <!--Lokalizacja-->
+                                                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                    <Image Source="{localImage:ImageResource Location}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                    <Label Text="{Binding Address}" FontSize="12" VerticalTextAlignment="Center"/>
+                                                </StackLayout>
+
+                                                <!--Adres-->
+                                                <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                    <Image Source="{localImage:ImageResource Calendar}" WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                    <Label Text="{Binding DateEvent}" FontSize="12" VerticalTextAlignment="Center"  />
+                                                </StackLayout>
+
+                                                <!--Cena-->
+                                                <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                    <Image Source="{localImage:ImageResource Price}" WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                    <Label Text="{Binding Price}" FontSize="12" VerticalTextAlignment="Center" />
+                                                </StackLayout>
+
+                                            </Grid>
+
+                                            <Image Source="{localImage:ImageResource GoNext}"  HeightRequest="25" WidthRequest="25" VerticalOptions="Center" HorizontalOptions="Center">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command ="{Binding ReadMore}" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+
+                                        <Label Text="{Binding CreatedDate}" Grid.Row="2" Grid.Column="0" TextColor="Gray" LineBreakMode="WordWrap" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" FontSize="12" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

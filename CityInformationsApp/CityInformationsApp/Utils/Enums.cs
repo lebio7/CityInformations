@@ -4,6 +4,7 @@
     {
         public enum Events
         {
+            All,
             Culture,
             Sport,
             Tourism,

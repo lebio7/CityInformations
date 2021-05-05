@@ -10,6 +10,10 @@ namespace CityInformationsApp.ViewModels
 {
     public class HomePageViewModel : BaseViewModel
     {
+        #region Consts
+        private const int NewsElementCount = 5;
+        #endregion
+
         #region Properties
 
         public ObservableCollection<NewsModel> NewsList { get; }
@@ -105,12 +109,11 @@ namespace CityInformationsApp.ViewModels
 
         private void LoadNewsCollection()
         {
-            foreach (NewsModel news in TestData.TestNewsList)
+            foreach (NewsModel news in TestData.TestNewsList.Take(NewsElementCount))
             {
                 NewsList.Add(news);
                 news.ReadMore = new Command<object>(GoToReadMore);
             }
-
         }
 
         private async void GoToReadMore(object selectedItem)

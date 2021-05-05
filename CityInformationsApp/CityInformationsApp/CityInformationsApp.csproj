@@ -12,6 +12,10 @@
     <None Remove="Resources\Images\Culture.png" />
     <None Remove="Resources\Images\DefaultImage.png" />
     <None Remove="Resources\Images\DetailDot.png" />
+    <None Remove="Resources\Images\EventsAll.png" />
+    <None Remove="Resources\Images\EventsCulture.png" />
+    <None Remove="Resources\Images\EventsSport.png" />
+    <None Remove="Resources\Images\EventsTourism.png" />
     <None Remove="Resources\Images\GoBack.png" />
     <None Remove="Resources\Images\GoNext.png" />
     <None Remove="Resources\Images\Location.png" />
@@ -29,6 +33,10 @@
     <EmbeddedResource Include="Resources\Images\Culture.png" />
     <EmbeddedResource Include="Resources\Images\DefaultImage.png" />
     <EmbeddedResource Include="Resources\Images\DetailDot.png" />
+    <EmbeddedResource Include="Resources\Images\EventsAll.png" />
+    <EmbeddedResource Include="Resources\Images\EventsCulture.png" />
+    <EmbeddedResource Include="Resources\Images\EventsSport.png" />
+    <EmbeddedResource Include="Resources\Images\EventsTourism.png" />
     <EmbeddedResource Include="Resources\Images\GoBack.png" />
     <EmbeddedResource Include="Resources\Images\GoNext.png" />
     <EmbeddedResource Include="Resources\Images\Location.png" />
@@ -49,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AnnouncementsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
