@@ -14,7 +14,6 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
                 <!--Navigation-->
@@ -27,7 +26,9 @@
                 </StackLayout>
 
                 <!--Zdjecie-->
-                <Image Source="{Binding InformationImage}" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Frame  Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="10" Padding="0">
+                    <Image Source="{Binding InformationImage}"  Aspect="AspectFill" />
+                </Frame>
 
                 <StackLayout  Grid.Row="2" Grid.Column="0">
                     <Label Text="{Binding DayOfEvent}" TextColor="{StaticResource Primary}" FontSize="13"/>

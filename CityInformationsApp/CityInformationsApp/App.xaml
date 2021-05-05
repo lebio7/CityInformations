@@ -36,6 +36,6 @@
                 <Setter Property="FontFamily" Value="RalewayBold" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
-        </ResourceDictionary>        
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
