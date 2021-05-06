@@ -5,7 +5,7 @@
         public const string FolderImages = "Resources.Images";
         public const string ProjectName = "CityInformationsApp";
         public const string PngExtension = "png";
-      
+
         public const string Siewierz = nameof(Siewierz);
         public const string Location = nameof(Location);
         public const string GoNext = nameof(GoNext);
@@ -47,5 +47,14 @@
             public const string ImageSort = nameof(ImageSort);
             public const string LabelSortUnSelected = nameof(LabelSortUnSelected);
         }
-    }
+
+        public class CarouselView
+        {
+            public const string Carousel1 = nameof(Carousel1);
+            public const string Carousel2 = nameof(Carousel2);
+            public const string Carousel3 = nameof(Carousel3);
+            public const string Carousel4 = nameof(Carousel4);
+        }
+
+    }   
 }

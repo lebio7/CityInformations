@@ -36,10 +36,9 @@
                       Icon="Route"/>
 
         <ShellContent Title="O mieście"
-                      Icon="About"/>
+                      Icon="About"
+                      ContentTemplate="{DataTemplate local:AboutPage}"/>
 
     </TabBar>
-
-    <MenuItem Text="Photos" />
 
 </Shell>

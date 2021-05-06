@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localImage="clr-namespace:CityInformationsApp.Utils"
+             x:Class="CityInformationsApp.Views.AboutPage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid Margin="8, 4, 8, 4" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <IndicatorView x:Name="imageIndicator"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IndicatorColor="LightGray" SelectedIndicatorColor="{StaticResource Primary}" IndicatorsShape="Circle" Margin="0,2,0,2" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" />
+                <CarouselView ItemsSource="{Binding CityImages}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" IndicatorView="{x:Reference imageIndicator}" >
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame HasShadow="True" BorderColor="DarkGray" Padding="0" HeightRequest="200" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="10">
+                                    <Image Source="{Binding Image}" Aspect="AspectFill"  />
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Label Text="{Binding DescriptionCity}" Grid.Row="2" FontSize="15" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Gray" Margin="4"/>
+
+
+                <StackLayout Grid.Row="3" Grid.Column="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Image Source="{localImage:ImageResource Audio}"  WidthRequest="50" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <Label Text="Wersja dla dzieci" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="1"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Image Source="{localImage:ImageResource Audio}"  WidthRequest="50" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <Label Text="Wersja ogólna" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,8,0,0">
+                    <Label Text="{Binding TitleAbout}" FontSize="16" HorizontalTextAlignment="Start" Style="{StaticResource LabelBold}"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="4">
+                        <Image Source="{localImage:ImageResource Location}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Center" />
+                        <Label Text="{Binding Location}" FontSize="15" Margin="4,0,0,0" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"  Margin="4">
+                        <Image Source="{localImage:ImageResource Hours}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Center" />
+                        <Label Text="{Binding Hours}" FontSize="15" Margin="4,0,0,0" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"  Margin="4">
+                        <Image Source="{localImage:ImageResource NumberPhone}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Center" />
+                        <Label Text="{Binding PhoneNumber}" FontSize="15" Margin="4,0,0,0" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"  Margin="4">
+                        <Image Source="{localImage:ImageResource Email}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Center" />
+                        <Label Text="{Binding Email}" FontSize="15" Margin="4,0,0,0" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

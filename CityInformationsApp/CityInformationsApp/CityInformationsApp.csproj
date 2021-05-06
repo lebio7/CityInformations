@@ -8,17 +8,25 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\Raleway-Regular.ttf" />
     <None Remove="Resources\Fonts\Raleway-SemiBold.ttf" />
+    <None Remove="Resources\Images\Audio.png" />
     <None Remove="Resources\Images\Calendar.png" />
+    <None Remove="Resources\Images\Carousel1.png" />
+    <None Remove="Resources\Images\Carousel2.png" />
+    <None Remove="Resources\Images\Carousel3.png" />
+    <None Remove="Resources\Images\Carousel4.png" />
     <None Remove="Resources\Images\Culture.png" />
     <None Remove="Resources\Images\DefaultImage.png" />
     <None Remove="Resources\Images\DetailDot.png" />
+    <None Remove="Resources\Images\Email.png" />
     <None Remove="Resources\Images\EventsAll.png" />
     <None Remove="Resources\Images\EventsCulture.png" />
     <None Remove="Resources\Images\EventsSport.png" />
     <None Remove="Resources\Images\EventsTourism.png" />
     <None Remove="Resources\Images\GoBack.png" />
     <None Remove="Resources\Images\GoNext.png" />
+    <None Remove="Resources\Images\Hours.png" />
     <None Remove="Resources\Images\Location.png" />
+    <None Remove="Resources\Images\NumberPhone.png" />
     <None Remove="Resources\Images\Price.png" />
     <None Remove="Resources\Images\RandomSiewierz1.png" />
     <None Remove="Resources\Images\SiewierzLogo.png" />
@@ -29,17 +37,25 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Raleway-Regular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Raleway-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Images\Audio.png" />
     <EmbeddedResource Include="Resources\Images\Calendar.png" />
+    <EmbeddedResource Include="Resources\Images\Carousel1.png" />
+    <EmbeddedResource Include="Resources\Images\Carousel2.png" />
+    <EmbeddedResource Include="Resources\Images\Carousel3.png" />
+    <EmbeddedResource Include="Resources\Images\Carousel4.png" />
     <EmbeddedResource Include="Resources\Images\Culture.png" />
     <EmbeddedResource Include="Resources\Images\DefaultImage.png" />
     <EmbeddedResource Include="Resources\Images\DetailDot.png" />
+    <EmbeddedResource Include="Resources\Images\Email.png" />
     <EmbeddedResource Include="Resources\Images\EventsAll.png" />
     <EmbeddedResource Include="Resources\Images\EventsCulture.png" />
     <EmbeddedResource Include="Resources\Images\EventsSport.png" />
     <EmbeddedResource Include="Resources\Images\EventsTourism.png" />
     <EmbeddedResource Include="Resources\Images\GoBack.png" />
     <EmbeddedResource Include="Resources\Images\GoNext.png" />
+    <EmbeddedResource Include="Resources\Images\Hours.png" />
     <EmbeddedResource Include="Resources\Images\Location.png" />
+    <EmbeddedResource Include="Resources\Images\NumberPhone.png" />
     <EmbeddedResource Include="Resources\Images\Price.png" />
     <EmbeddedResource Include="Resources\Images\RandomSiewierz1.png" />
     <EmbeddedResource Include="Resources\Images\SiewierzLogo.png" />
@@ -57,6 +73,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\AnnouncementsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
