@@ -33,7 +33,8 @@
                       Icon="Location"/>
 
         <ShellContent Title="Mapa"
-                      Icon="Route"/>
+                      Icon="Route"
+                      ContentTemplate="{DataTemplate local:MapPage}"/>
 
         <ShellContent Title="O mieście"
                       Icon="About"

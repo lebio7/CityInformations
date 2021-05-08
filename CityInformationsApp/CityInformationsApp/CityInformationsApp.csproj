@@ -27,6 +27,14 @@
     <None Remove="Resources\Images\Hours.png" />
     <None Remove="Resources\Images\Location.png" />
     <None Remove="Resources\Images\NumberPhone.png" />
+    <None Remove="Resources\Images\ObjectAccommodation.png" />
+    <None Remove="Resources\Images\ObjectAll.png" />
+    <None Remove="Resources\Images\ObjectEducation.png" />
+    <None Remove="Resources\Images\ObjectHealth.png" />
+    <None Remove="Resources\Images\ObjectMonuments.png" />
+    <None Remove="Resources\Images\ObjectRestaurant.png" />
+    <None Remove="Resources\Images\ObjectShops.png" />
+    <None Remove="Resources\Images\ObjectSports.png" />
     <None Remove="Resources\Images\Price.png" />
     <None Remove="Resources\Images\RandomSiewierz1.png" />
     <None Remove="Resources\Images\SiewierzLogo.png" />
@@ -56,6 +64,14 @@
     <EmbeddedResource Include="Resources\Images\Hours.png" />
     <EmbeddedResource Include="Resources\Images\Location.png" />
     <EmbeddedResource Include="Resources\Images\NumberPhone.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectAccommodation.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectAll.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectEducation.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectHealth.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectMonuments.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectRestaurant.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectShops.png" />
+    <EmbeddedResource Include="Resources\Images\ObjectSports.png" />
     <EmbeddedResource Include="Resources\Images\Price.png" />
     <EmbeddedResource Include="Resources\Images\RandomSiewierz1.png" />
     <EmbeddedResource Include="Resources\Images\SiewierzLogo.png" />
@@ -83,6 +99,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\InformationDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

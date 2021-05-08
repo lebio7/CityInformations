@@ -9,5 +9,17 @@
             Sport,
             Tourism,
         }
+
+        public enum ObjectLocation
+        {
+            All,
+            Shops,
+            Restaurant,
+            Health,
+            Education,
+            Accommodation,
+            Sport,
+            Monuments
+        }
     }
 }

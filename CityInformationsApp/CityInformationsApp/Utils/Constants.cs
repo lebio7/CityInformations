@@ -35,6 +35,18 @@
             public const string EventsTourism = nameof(EventsTourism);
         }
 
+        public class ObjectLocationsName
+        {
+            public const string ObjectAccommodation = nameof(ObjectAccommodation);
+            public const string ObjectAll = nameof(ObjectAll);
+            public const string ObjectEducation = nameof(ObjectEducation);
+            public const string ObjectHealth = nameof(ObjectHealth);
+            public const string ObjectMonuments = nameof(ObjectMonuments);
+            public const string ObjectRestaurant = nameof(ObjectRestaurant);
+            public const string ObjectShops = nameof(ObjectShops);
+            public const string ObjectSports = nameof(ObjectSports);
+        }
+
         public class Extensions
         {
             public const string Zlotych = ".zł";

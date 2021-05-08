@@ -58,6 +58,19 @@ namespace CityInformationsApp.Utils
             }
         }
 
+        public void AddButtonsByObjectLocation(Enums.ObjectLocation[] objectlocations)
+        {
+            if (objectlocations == null || objectlocations.Length == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < objectlocations.Length; i++)
+            {
+                sortButtonModel.Add(new SortButtonModel(i, objectlocations[i].ToString(), Helper.GetImageForSortButtonObjectLocation(objectlocations[i])));
+            }
+        }
+
         public void Build(FlexLayout baseLayout)
         {
             if (sortButtonModel?.Count > 0)

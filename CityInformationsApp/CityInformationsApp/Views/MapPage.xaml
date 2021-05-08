@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityInformationsApp.Views.MapPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+
+            <Grid Padding="0" Margin="0">
+
+                <Grid.RowDefinitions>
+                    <!--Filtrowanie-->
+                    <RowDefinition Height="auto"/>
+                    <!--Mapa-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="0, 8, 0, 0"  Grid.Row="0" >
+                    <FlexLayout Direction="Row" Wrap="Wrap"  AlignItems="Center" JustifyContent="SpaceBetween" Margin="4" x:Name="SortButtons">
+                    </FlexLayout>
+                </StackLayout>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
