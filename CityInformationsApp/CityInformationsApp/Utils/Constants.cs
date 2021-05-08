@@ -58,6 +58,7 @@
             public const string FrameSort = nameof(FrameSort);
             public const string ImageSort = nameof(ImageSort);
             public const string LabelSortUnSelected = nameof(LabelSortUnSelected);
+            public const string FreePrice = nameof(FreePrice);
         }
 
         public class CarouselView

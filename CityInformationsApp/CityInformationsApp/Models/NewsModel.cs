@@ -31,7 +31,7 @@ namespace CityInformationsApp.Models
             SelectedEvent = selectedEvent;
 
             Address = string.IsNullOrEmpty(address) ? string.Empty : $"{Constants.Extensions.Street}{address}";
-            Price = price == 0 ? "Bezpłatne" : $"{price}{Constants.Extensions.Zlotych}";
+            Price = price == 0 ? BaseApplication.applicationModel.GetValueFromResourceManager(Constants.ResourceNames.FreePrice): $"{price}{Constants.Extensions.Zlotych}";
 
             AdditionalDetails = additionalDetails;
         }

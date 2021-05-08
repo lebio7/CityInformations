@@ -37,5 +37,15 @@ namespace CityInformationsApp.Models
             ProjectAssembly = projectAssembly;
             cultureInfo = new CultureInfo("pl-PL");
         }
+
+        public string GetValueFromResourceManager(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return string.Empty;
+            }
+
+            return Resources.Resource1.ResourceManager.GetString(name, cultureInfo);
+        }
     }
 }

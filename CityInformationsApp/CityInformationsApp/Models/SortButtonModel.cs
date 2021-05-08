@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using CityInformationsApp.Utils;
+using Xamarin.Forms;
 
 namespace CityInformationsApp.Models
 {
@@ -12,10 +13,10 @@ namespace CityInformationsApp.Models
 
         public int IdEnum { get; private set; }
 
-        public SortButtonModel(int id, string title, ImageSource image)
+        public SortButtonModel(int id, string nameOfEnum, ImageSource image)
         {
             IdEnum = id;
-            Title = title;
+            Title = BaseApplication.applicationModel.GetValueFromResourceManager(nameOfEnum);
             ImageSort = image;
             IsSelected = false;
         }
