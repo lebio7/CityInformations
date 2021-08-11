@@ -1,0 +1,217 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>LeafletMap</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script src="JS/leaflet.js"></script>
+    <link rel="stylesheet" href="CSS/leaflet.css" />
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100vw;
+        }
+    </style>
+
+</head>
+<body>
+    <div id='map'></div>
+
+    <script type="text/javascript">
+
+        var mbAttr = '&copy;<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            mbUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            mbUrl2 = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            mbAttr2 = 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
+
+        var OSM = L.tileLayer(mbUrl, { id: 'OSM', attribution: mbAttr }),
+            Sat = L.tileLayer(mbUrl2, { id: 'Sat', attribution: mbAttr2 });
+
+        var baseLayers = {
+            "OSM": OSM,
+
+        };
+
+        var markerGroup = new L.LayerGroup();
+        var map = L.map('map', {
+            center: [50.468650584278706, 19.236652746516285],
+            zoom: 13,
+            layers: [OSM]
+        });
+
+        map.addLayer(markerGroup);
+
+        L.control.layers(baseLayers).addTo(map);
+
+        function newMarker(lat, lon, texto) {
+            var marker = L.marker([lat.toString(), lon.toString()]).bindPopup(texto);
+            markerGroup.addLayer(marker);
+        }
+
+        function newMarkerWithOwnIcon(lat, lon, texto, ownIcon)
+        {
+            var selectedIcon = correctIcon(ownIcon);
+            var marker = L.marker([lat.toString(), lon.toString()], { icon: selectedIcon }).bindPopup(texto)
+            markerGroup.addLayer(marker);
+        }
+
+        function newLine(latFrom, lonFrom, latTo, lonTo, color) {
+            var From = new L.latlng(latFrom, lonFrom);
+            var To = new L.latlng(latTo, lonTo);
+            var FromTo = [From, To];
+            var Line = new L.polyline(FromTo, { color: color, weight: 3, opacity: 0.5, smoothFactor: 1, noClip: false });
+            markerGroup.addLayer(Line);
+        }
+
+        function newCircle(lat, lon, color, fillColor, fillOpacity, radius) {
+            var circle = L.circle([lat, lon], { color: color, fillColor: fillColor, fillOpacity: fillOpacity, radius: radius });
+            markerGroup.addLayer(circle);
+        }
+
+        function show() {
+            markerGroup.addTo(map);
+        }
+
+        function centerMap(lat, lon) {
+            map.panTo(new L.LatLng(lat, lon));
+        }
+
+        function delMarker() {
+            markerGroup.clearLayers().addTo(map);
+        }
+
+        function correctIcon(ownIcon) {
+            if (ownIcon == '1') {
+                return ShopsIcon;
+            }
+            else if (ownIcon == '2') {
+                return RestaurantIcon;
+            }
+            else if (ownIcon == '3') {
+                return HealthIcon;
+            }
+            else if (ownIcon == '4') {
+                return EducationIcon;
+            }
+            else if (ownIcon == '5') {
+                return AccommodationIcon;
+            }
+            else if (ownIcon == '6') {
+                return SportIcon;
+            }
+            else if (ownIcon == '7') {
+                return MonumentsIcon;
+            }
+        }
+
+        var LocationIcon = L.icon({
+            iconUrl: 'MapLocation.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var AccommodationIcon = L.icon({
+            iconUrl: 'MapAccommodation.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var EducationIcon = L.icon({
+            iconUrl: 'MapEducation.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var HealthIcon = L.icon({
+            iconUrl: 'MapHealth.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var MonumentsIcon = L.icon({
+            iconUrl: 'MapMonuments.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var RestaurantIcon = L.icon({
+            iconUrl: 'MapRestaurant.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var ShopsIcon = L.icon({
+            iconUrl: 'MapShops.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var SportIcon = L.icon({
+            iconUrl: 'MapSport.png',
+            shadowUrl: 'marker-shadow.png',
+
+            iconSize: [25, 41], // size of the icon
+            shadowSize: [41, 41], // size of the shadow
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+
+    </script>
+</body>
+</html>

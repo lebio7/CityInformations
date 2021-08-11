@@ -12,14 +12,14 @@
 
         public enum ObjectLocation
         {
-            All,
-            Shops,
-            Restaurant,
-            Health,
-            Education,
-            Accommodation,
-            Sport,
-            Monuments
+            All = 0,
+            Shops = 1,
+            Restaurant = 2,
+            Health = 3,
+            Education = 4,
+            Accommodation = 5,
+            Sport = 6,
+            Monuments = 7, 
         }
     }
 }

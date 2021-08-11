@@ -1,5 +1,9 @@
-﻿using CityInformationsApp.ViewModels;
-
+﻿using CityInformationsApp.Utils;
+using CityInformationsApp.Utils.CustomRenderer;
+using CityInformationsApp.ViewModels;
+using System;
+using System.IO;
+using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,11 +13,12 @@ namespace CityInformationsApp.Views
     public partial class MapPage : ContentPage
     {
         MapPageViewModel viewModel;
+
         public MapPage()
         {
             InitializeComponent();
-            viewModel = new MapPageViewModel();
-
+            
+            viewModel = new MapPageViewModel(new CustomMapProvider(webView, Utils.TestData.TestLocationData));
             GenerateButtonsSortView();
         }
 
@@ -21,5 +26,6 @@ namespace CityInformationsApp.Views
         {
             viewModel?.SortButtonBuilder.Build(SortButtons);
         }
+
     }
 }

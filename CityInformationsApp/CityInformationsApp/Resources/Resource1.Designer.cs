@@ -70,6 +70,15 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj miejsce do ulubionych.
+        /// </summary>
+        internal static string AddToLocationsList {
+            get {
+                return ResourceManager.GetString("AddToLocationsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wszystkie.
         /// </summary>
         internal static string All {

@@ -27,7 +27,10 @@ namespace CityInformationsApp.Models
         #endregion
 
         #region Properties
+
         public CultureInfo cultureInfo { get; private set; }
+
+        public LocationToNavigateModel SelectedLocations { get; private set; }
         #endregion
 
         public Assembly ProjectAssembly { get; private set; }
@@ -36,6 +39,7 @@ namespace CityInformationsApp.Models
         {
             ProjectAssembly = projectAssembly;
             cultureInfo = new CultureInfo("pl-PL");
+            SelectedLocations = new LocationToNavigateModel();
         }
 
         public string GetValueFromResourceManager(string name)

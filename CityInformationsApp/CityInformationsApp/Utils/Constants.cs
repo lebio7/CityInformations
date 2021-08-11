@@ -12,6 +12,7 @@
         public const string Calendar = nameof(Calendar);
         public const string Price = nameof(Price);
         public const string DetailDot = nameof(DetailDot);
+        public const string AddToLocationsList = nameof(AddToLocationsList);
 
         public class DateTimeExtension
         {

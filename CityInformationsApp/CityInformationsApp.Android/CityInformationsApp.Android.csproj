@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -58,6 +59,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRenderer\BaseUrl.cs" />
+    <Compile Include="CustomRenderer\MapJavascriptRun.cs" />
+    <Compile Include="CustomRenderer\WebViewCustom.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +113,69 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\CSS\leaflet.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\Location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\layers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\layers-2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\marker-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\marker-icon-2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\marker-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\JS\leaflet.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\marker-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapAccommodation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapEducation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapHealth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapMonuments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapRestaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapShops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapSport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MapTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

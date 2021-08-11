@@ -120,6 +120,9 @@
   <data name="Accommodation" xml:space="preserve">
     <value>Noclegi</value>
   </data>
+  <data name="AddToLocationsList" xml:space="preserve">
+    <value>Dodaj miejsce do ulubionych</value>
+  </data>
   <data name="All" xml:space="preserve">
     <value>Wszystkie</value>
   </data>

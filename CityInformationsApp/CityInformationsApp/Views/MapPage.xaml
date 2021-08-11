@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:map1="clr-namespace:CityInformationsApp.Utils.CustomRenderer"
              x:Class="CityInformationsApp.Views.MapPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+        <StackLayout Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
 
             <Grid Padding="0" Margin="0">
 
@@ -19,6 +20,9 @@
                     </FlexLayout>
                 </StackLayout>
 
+                <StackLayout Grid.Row="1" >
+                    <map1:IWebViewCustom x:Name="webView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20" HeightRequest="300"/>
+                </StackLayout>
 
             </Grid>
         </StackLayout>

@@ -56,5 +56,15 @@ namespace CityInformationsApp.Utils
           " grzebalnego. Prawdopodobnie w 1241 r. po spaleniu grodu przez Tatarów przeniesiono osadę w dolinę Czarnej Przemszy chronioną rzeką i rozległymi bagnami. W 1276 r, Siewierz otrzymał" +
           " prawa miejskie, jednakże nie zachował się dokument lokacyjny. W czasie rozbicia dzielnicowego Siewierz był miejscem znanych bitew. W 1289 r. wojska Władysława Łokietka rozbiły wojska książąt śląskich w walce o tron krakowski" +
           ", a w 1292 r. Wacław II czeski zwyciężył wojska polskie i zajął Kraków. Odrębność terytorialną ziemi siewierskiej po raz pierwszy stwierdzono w dokumencie z 1266 r., wspominającym o districtus severiensis.";
+
+        public static List<CustomPin> TestLocationData = new List<CustomPin>
+        {
+            new CustomPin (1){Name = "Park Miejski",EnumName = (int)Enums.ObjectLocation.Health, Latitude = 50.475273471298564, Longitude = 19.2369778461592, Address =  "Żwirki i Wigury 26, 42-470 Siewierz", TimeOpenClose = "8:00 - 16:00"},
+            new CustomPin (2){Name = "Plac Zabaw",EnumName = (int)Enums.ObjectLocation.Sport, Latitude = 50.47534741185839, Longitude = 19.23514549951801, Address =  "Stolarska 2, 42-470 Siewierz", TimeOpenClose = "8:00 - 16:00"},
+            new CustomPin (3){Name = "Hotel Natura Residence",EnumName = (int)Enums.ObjectLocation.Accommodation, Latitude = 50.46622341947345, Longitude = 19.202231609038382, Address =  "Sucha 4, 42-470 Siewierz", TimeOpenClose = "8:00 - 17:00"},
+            new CustomPin (4){Name = "Ruiny Zamku w Siewierzu" ,EnumName = (int)Enums.ObjectLocation.Sport, Latitude = 50.46747274085934, Longitude = 19.241545498722413, Address =  "Tadeusza Kościuszki, 42-470 Siewierz", TimeOpenClose = "10:00 - 18:00"},
+            new CustomPin (5){Name = "Złota Gęś" ,EnumName = (int)Enums.ObjectLocation.Restaurant, Latitude = 50.4667713589257, Longitude = 19.231372606695754, Address =  "Bytomska 59, 42-470 Siewierz", TimeOpenClose = "10:00 - 18:00"},
+            new CustomPin (6){Name = "Profesor Burger" ,EnumName = (int)Enums.ObjectLocation.Restaurant, Latitude = 50.467911099284926, Longitude = 19.23050682865093, Address =  "Warszawska 6c, 42-470 Siewierz", TimeOpenClose = "10:00 - 18:00"},
+        };
     }
 }
