@@ -167,7 +167,7 @@ namespace CityInformationsApp.Utils
             sb.Append($"<u>{pin.Address}</u>");
             sb.Append(string.Format(@"<button class=\'directionButton\' onClick=\'CSharp.AddToLocationToNavigate({0})\'>{1} <img src=\'{2}\' /></button>", pin.ElementId.ToString(), navigateText, DirectionIcon));
 
-            NewMarkerWithOwnIcon(pin.Latitude.ToString(), pin.Longitude.ToString(), sb.ToString(), pin.EnumName.ToString());
+            NewMarkerWithOwnIcon(pin.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), pin.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture), sb.ToString(), pin.EnumName.ToString());
         }
 
         #endregion
