@@ -13,6 +13,7 @@
         public const string Price = nameof(Price);
         public const string DetailDot = nameof(DetailDot);
         public const string AddToLocationsList = nameof(AddToLocationsList);
+        public const string PleaseWaitLoadingData = nameof(PleaseWaitLoadingData);
 
         public class DateTimeExtension
         {
@@ -57,6 +58,7 @@
         public class ResourceNames
         {
             public const string FrameSort = nameof(FrameSort);
+            public const string FrameSelectedSort = nameof(FrameSelectedSort);
             public const string ImageSort = nameof(ImageSort);
             public const string LabelSortUnSelected = nameof(LabelSortUnSelected);
             public const string FreePrice = nameof(FreePrice);

@@ -124,6 +124,16 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trwa Ładowanie danych
+        /// Proszę czekać ....
+        /// </summary>
+        internal static string PleaseWaitLoadingData {
+            get {
+                return ResourceManager.GetString("PleaseWaitLoadingData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restauracje.
         /// </summary>
         internal static string Restaurant {

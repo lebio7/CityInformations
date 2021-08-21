@@ -13,19 +13,33 @@ namespace CityInformationsApp.Views
     public partial class MapPage : ContentPage
     {
         MapPageViewModel viewModel;
+        private bool isRunning;
 
         public MapPage()
         {
             InitializeComponent();
             
             viewModel = new MapPageViewModel(new CustomMapProvider(webView, Utils.TestData.TestLocationData));
-            GenerateButtonsSortView();
+        }
+
+        protected override async void OnAppearing()
+        {
+            if (!isRunning)
+            {
+                isRunning = true;
+                GenerateButtonsSortView();
+
+                await viewModel.PrepareData();
+
+                return;
+            }
+
+            viewModel?.ReloadMapPins();
         }
 
         public void GenerateButtonsSortView()
         {
             viewModel?.SortButtonBuilder.Build(SortButtons);
         }
-
     }
 }

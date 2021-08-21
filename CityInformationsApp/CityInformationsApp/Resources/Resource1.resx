@@ -141,6 +141,10 @@
   <data name="Monuments" xml:space="preserve">
     <value>Zabytki</value>
   </data>
+  <data name="PleaseWaitLoadingData" xml:space="preserve">
+    <value>Trwa Ładowanie danych
+ Proszę czekać ...</value>
+  </data>
   <data name="Restaurant" xml:space="preserve">
     <value>Restauracje</value>
   </data>

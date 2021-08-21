@@ -28,7 +28,8 @@ namespace CityInformationsApp.Utils
 
         #region Properties
 
-        public Style FrameStyle { get; private set; }
+        public Style FrameDefaultStyle { get; private set; }
+        public Style FrameSelectedStyle { get; private set; }
 
         public Style ImageStyle { get; private set; }
 
@@ -39,7 +40,8 @@ namespace CityInformationsApp.Utils
         public SortButtonBuilder(Action<int> sortList)
         {
             sortButtonModel = new List<SortButtonModel>();
-            FrameStyle = Helper.TryFindResource(Constants.ResourceNames.FrameSort);
+            FrameDefaultStyle = Helper.TryFindResource(Constants.ResourceNames.FrameSort);
+            FrameSelectedStyle = Helper.TryFindResource(Constants.ResourceNames.FrameSelectedSort);
             ImageStyle = Helper.TryFindResource(Constants.ResourceNames.ImageSort);
             LabelStyleUnSelected = Helper.TryFindResource(Constants.ResourceNames.LabelSortUnSelected);
             SortList = sortList;
@@ -79,7 +81,7 @@ namespace CityInformationsApp.Utils
                 {
                     Frame frame = new Frame();
 
-                    frame.Style = FrameStyle;
+                    frame.Style = FrameDefaultStyle;
 
                     StackLayout stackLayout = new StackLayout();
                     stackLayout.VerticalOptions = LayoutOptions.Center;
@@ -106,7 +108,7 @@ namespace CityInformationsApp.Utils
                             }
 
                             selectedItem?.Execute(null);
-                            SelectItem(sortButton, label);
+                            SelectItem(sortButton, frame);
                         }
                     });
 
@@ -115,7 +117,7 @@ namespace CityInformationsApp.Utils
 
                     if (sortButton.IdEnum == FirstSelectedItem)
                     {
-                        SelectItem(sortButton, label);
+                        SelectItem(sortButton, frame);
                     }
 
                     baseLayout.Children.Add(frame);
@@ -124,28 +126,28 @@ namespace CityInformationsApp.Utils
 
         }
 
-        private void SelectItem(SortButtonModel sortButton, Label label)
+        private void SelectItem(SortButtonModel sortButton, Frame tile)
         {
-            if (label != null && sortButton != null)
+            if (tile != null && sortButton != null)
             {
-                label.TextColor = SelectedColor;
+                tile.Style = FrameSelectedStyle;
                 sortButton.IsSelected = true;
                 selectedIdElement = sortButton.IdEnum;
 
                 selectedItem = new Command(() =>
                 {
-                    UnSelectItem(sortButton, label);
+                    UnSelectItem(sortButton, tile);
                 });
 
                 SortList.Invoke(sortButton.IdEnum);
             }
         }
 
-        private void UnSelectItem(SortButtonModel sortButton, Label label)
+        private void UnSelectItem(SortButtonModel sortButton, Frame tile)
         {
-            if (label != null && sortButton != null)
+            if (tile != null && sortButton != null)
             {
-                label.TextColor = UnSelectedColor;
+                tile.Style = FrameDefaultStyle;
                 sortButton.IsSelected = false;
             }
         }

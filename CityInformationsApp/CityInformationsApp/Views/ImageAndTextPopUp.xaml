@@ -7,7 +7,7 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ActivityIndicatorStyle" TargetType="ActivityIndicator">
-                <Setter Property="Color" Value="blue" />
+                <Setter Property="Color" Value="#92d64f" />
                 <Setter Property="WidthRequest" Value="100" />
                 <Setter Property="HeightRequest" Value="100" />
                 <Setter Property="VerticalOptions" Value="Center" />
