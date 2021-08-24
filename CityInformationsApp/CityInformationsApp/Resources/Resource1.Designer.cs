@@ -97,6 +97,24 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miejsce znajduje się już na liście ulubionych.
+        /// </summary>
+        internal static string ElementExist {
+            get {
+                return ResourceManager.GetString("ElementExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodane do listy ulubionych.
+        /// </summary>
+        internal static string ElementNotExist {
+            get {
+                return ResourceManager.GetString("ElementNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bezpłatne.
         /// </summary>
         internal static string FreePrice {

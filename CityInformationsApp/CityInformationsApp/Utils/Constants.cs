@@ -14,6 +14,8 @@
         public const string DetailDot = nameof(DetailDot);
         public const string AddToLocationsList = nameof(AddToLocationsList);
         public const string PleaseWaitLoadingData = nameof(PleaseWaitLoadingData);
+        public const string ElementExist = nameof(ElementExist);
+        public const string ElementNotExist = nameof(ElementNotExist);
 
         public class DateTimeExtension
         {

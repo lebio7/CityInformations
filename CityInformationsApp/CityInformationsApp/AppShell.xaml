@@ -30,7 +30,8 @@
                       ContentTemplate="{DataTemplate local:AnnouncementsPage}"/>
 
         <ShellContent Title="Lokalizacje"
-                      Icon="Location"/>
+                      Icon="Location"
+                      ContentTemplate="{DataTemplate local:LocationPage}"/>
 
         <ShellContent Title="Mapa"
                       Icon="Route"

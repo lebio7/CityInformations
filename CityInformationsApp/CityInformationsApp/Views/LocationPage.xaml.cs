@@ -6,15 +6,16 @@ using Xamarin.Forms.Xaml;
 namespace CityInformationsApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AnnouncementsPage : ContentPage
+    public partial class LocationPage : ContentPage
     {
-        private AnnouncementsPageViewModel viewModel;
-        public AnnouncementsPage()
+        private LocationPageViewModel viewModel;
+
+        public LocationPage()
         {
             InitializeComponent();
-            viewModel = new AnnouncementsPageViewModel();
-            BindingContext = viewModel;
+            viewModel = new LocationPageViewModel();
 
+            BindingContext = viewModel;
             GenerateButtonsSortView();
         }
 

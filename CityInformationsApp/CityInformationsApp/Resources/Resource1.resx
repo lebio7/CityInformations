@@ -132,6 +132,12 @@
   <data name="Education" xml:space="preserve">
     <value>Edukacja</value>
   </data>
+  <data name="ElementExist" xml:space="preserve">
+    <value>Miejsce znajduje się już na liście ulubionych</value>
+  </data>
+  <data name="ElementNotExist" xml:space="preserve">
+    <value>Dodane do listy ulubionych</value>
+  </data>
   <data name="FreePrice" xml:space="preserve">
     <value>Bezpłatne</value>
   </data>

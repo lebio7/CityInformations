@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localImage="clr-namespace:CityInformationsApp.Utils"
+             x:Class="CityInformationsApp.Views.LocationPage">
+    <ContentPage.Content>
+        <StackLayout Orientation ="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid Padding="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <!--Filtrowanie-->
+                    <RowDefinition Height="auto"/>
+                    <!--Lista-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="0, 8, 0, 0"  Grid.Row="0" >
+                    <FlexLayout Direction="Row" Wrap="Wrap"  AlignItems="Center" JustifyContent="SpaceBetween" Margin="4" x:Name="SortButtons">
+                    </FlexLayout>
+                </StackLayout>
+
+                <!--Lokalizacje-->
+                <StackLayout Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <ListView
+                         x:Name="ItemsListView"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         SelectionMode="None"
+                         ItemsSource="{Binding LocationList}"
+                         HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="True">
+                                    <Grid Margin="8, 2, 8, 0" Padding="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame CornerRadius="40" Padding="0" Grid.Column="0" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="{StaticResource Green}">
+                                            <Image WidthRequest="55" HeightRequest="55" HorizontalOptions="Center" VerticalOptions="Center" Source="{Binding LeftImage}" ></Image>
+                                        </Frame>
+
+                                        <Grid Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand" Margin="2,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <Label Text="{Binding Title}" Grid.Row="0"  HorizontalTextAlignment="Center" FontSize="15" Style="{StaticResource LabelBold}"/>
+
+                                            <!--Lokalizacja-->
+                                            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                <Image Source="{localImage:ImageResource Location}"  WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                <Label Text="{Binding Address}" FontSize="12" VerticalTextAlignment="Center"/>
+                                            </StackLayout>
+
+                                            <!--Adres-->
+                                            <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                <Image Source="{localImage:ImageResource Calendar}" WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                <Label Text="{Binding DateOpenAndClose}" FontSize="12" VerticalTextAlignment="Center"  />
+                                            </StackLayout>
+
+                                            <!--PhoneNumber-->
+                                            <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                                <Image Source="{localImage:ImageResource NumberPhone}" WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                                <Label Text="{Binding PhoneNumber}" FontSize="12" VerticalTextAlignment="Center" />
+                                            </StackLayout>
+
+                                        </Grid>
+
+                                        <Image Source="{localImage:ImageResource AddToListIcon}" Grid.Column="2"  HeightRequest="50" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command ="{Binding AddToFavourite}" CommandParameter="{Binding .}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

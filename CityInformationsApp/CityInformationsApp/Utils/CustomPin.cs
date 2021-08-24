@@ -18,6 +18,8 @@ namespace CityInformationsApp.Utils
 
         public string TimeOpenClose { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public CustomPin(int elementId)
         {
             ElementId = elementId;
