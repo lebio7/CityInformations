@@ -1,29 +1,30 @@
 ﻿using CityInformationsApp.ViewModels;
 using Rg.Plugins.Popup.Pages;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CityInformationsApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    public partial class ImageAndTextPopUp : PopupPage
+    public partial class AlertImagePopUpPage : PopupPage
     {
-        private ImageAndTextPopUpViewModel viewModel;
+        private AlertImagePopUpPageViewModel viewModel;
 
-        public ImageAndTextPopUp(string textToDisplay, string imageToDisplay = null, bool imageIsAnimated = false)
+        public AlertImagePopUpPage(string imageToDisplay, FormattedString title, string leftButton, string rightButton, List<(string image, string details)> additionallDetails = null)
         {
             InitializeComponent();
 
-            viewModel = new ImageAndTextPopUpViewModel(textToDisplay, imageToDisplay, imageIsAnimated);
+            viewModel = new AlertImagePopUpPageViewModel(imageToDisplay, title, leftButton, rightButton, additionallDetails);
             BindingContext = viewModel;
         }
 
         #region Show/Close PopUp
 
-        public async Task ShowAlert(bool animate = true)
+        public async Task<bool> ShowAlert(bool animate = true)
         {
-            await viewModel.ShowPopUp(this, animate);
+           return await viewModel.ShowAlertAsync(this, animate);
         }
 
         public void CloseAllPopup(bool animation = true)

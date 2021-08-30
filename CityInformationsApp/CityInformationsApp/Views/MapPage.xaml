@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:map1="clr-namespace:CityInformationsApp.Utils.CustomRenderer"
+             xmlns:local="clr-namespace:CityInformationsApp.Utils"
              x:Class="CityInformationsApp.Views.MapPage">
     <ContentPage.Content>
         <StackLayout Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
@@ -13,6 +14,8 @@
                     <RowDefinition Height="auto"/>
                     <!--Mapa-->
                     <RowDefinition Height="*"/>
+                    <!--Przejscie do lokalizacji ulubionych-->
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <StackLayout Margin="0, 8, 0, 0"  Grid.Row="0" >
@@ -21,9 +24,11 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" >
-                    <map1:IWebViewCustom x:Name="webView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20" HeightRequest="300"/>
+                    <map1:IWebViewCustom x:Name="webView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" HeightRequest="300"/>
                 </StackLayout>
 
+                <!--Przejscie do lokalizacji ulubionych-->
+                <Button IsVisible="{Binding IsButtonFavouriteVisible}" Command="{Binding GoToFavouriteList}" Text="{local:Translate GoToSelectedLocations}" FontFamily="RalewayRegular" FontSize="12" CornerRadius="25" Grid.Row="2" Margin="0,8,0,8" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="200" BackgroundColor="{StaticResource Green}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

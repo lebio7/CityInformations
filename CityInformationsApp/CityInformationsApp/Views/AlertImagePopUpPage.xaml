@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="CityInformationsApp.Views.AlertImagePopUpPage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="700"
+            EasingIn="BounceOut"
+            PositionIn="Top"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
+    </pages:PopupPage.Animation>
+    <RelativeLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid  RelativeLayout.WidthConstraint="{OnIdiom Tablet={ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}, Phone={ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.9}}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+            RelativeLayout.XConstraint="{OnIdiom Tablet={ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}, Phone={ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05}}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+            IsClippedToBounds="True">
+            <Frame
+                BorderColor="White"
+                BackgroundColor="White"
+                Padding="0"
+                CornerRadius="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!--image-->
+                        <RowDefinition Height="auto" />
+                        <!--title-->
+                        <RowDefinition Height="auto" />
+                        <!--lista-->
+                        <RowDefinition Height="*" />
+                        <!--przyciski-->
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image 
+                    Grid.Row="0"
+                    HeightRequest="175"
+                    WidthRequest="175"
+                    Source="{Binding ImageToDisplay}"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+                    <Label
+                    Grid.Row="1"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="15"
+                    FormattedText="{Binding TitleToDisplay}"
+                    Style="{DynamicResource LabelBold}"/>
+
+                    <ListView
+                         x:Name="ItemsListView"
+                         VerticalOptions="FillAndExpand"
+                         Margin="4,0,4,0"
+                         Grid.Row="2"
+                         HorizontalOptions="FillAndExpand"
+                         SelectionMode="None"
+                         ItemsSource="{Binding AdditionallList}"
+                         HasUnevenRows="True"
+                         IsVisible="{Binding IsAdditionallData}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="True">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                        <Image Source="{Binding Image}" Margin="0,2,0,2"  WidthRequest="25" HeightRequest="25" VerticalOptions="Start" />
+                                        <Label Text="{Binding Details}" Margin="0,2,0,2" FontSize="10" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackLayout Grid.Row="3"  Grid.Column="0" Margin="0,0,2,0" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid Padding="0" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Row="0" Grid.Column="0" Margin="8,0,0,8" CornerRadius="20" Padding="0"  HeightRequest="50" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Primary}">
+                                <Label Text="{Binding LeftButton}" Grid.Row="1" Grid.Column="0"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15" Style="{StaticResource LabelBold}" TextColor="White"/>
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command ="{Binding LeftCommand}"/>
+                                </Frame.GestureRecognizers>
+
+                            </Frame>
+
+                            <Frame Grid.Row="0" Grid.Column="1" Margin="8,0,0,8" HeightRequest="50" WidthRequest="200" CornerRadius="20"  Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Primary}">
+                                <Label Text="{Binding RightButton}" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" FontSize="15" Style="{StaticResource LabelBold}" TextColor="White"/>
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command ="{Binding RightCommand}"/>
+                                </Frame.GestureRecognizers>
+
+                            </Frame>
+
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+    </RelativeLayout>
+</pages:PopupPage>

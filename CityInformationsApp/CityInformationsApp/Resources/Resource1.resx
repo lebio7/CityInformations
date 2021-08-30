@@ -123,8 +123,20 @@
   <data name="AddToLocationsList" xml:space="preserve">
     <value>Dodaj miejsce do ulubionych</value>
   </data>
+  <data name="AddToRoute" xml:space="preserve">
+    <value>Dodaj do trasy</value>
+  </data>
   <data name="All" xml:space="preserve">
     <value>Wszystkie</value>
+  </data>
+  <data name="AreYouArchievedTargetPlace" xml:space="preserve">
+    <value>Czy udało Ci się dotrzeć do:</value>
+  </data>
+  <data name="ByCar" xml:space="preserve">
+    <value>Samochodem</value>
+  </data>
+  <data name="ByWalk" xml:space="preserve">
+    <value>Pieszo</value>
   </data>
   <data name="Culture" xml:space="preserve">
     <value>Kultura</value>
@@ -141,11 +153,29 @@
   <data name="FreePrice" xml:space="preserve">
     <value>Bezpłatne</value>
   </data>
+  <data name="GoBack" xml:space="preserve">
+    <value>Cofnij</value>
+  </data>
+  <data name="GoToSelectedLocations" xml:space="preserve">
+    <value>Przejdź do wybranych lokalizacji</value>
+  </data>
   <data name="Health" xml:space="preserve">
     <value>Zdrowie</value>
   </data>
+  <data name="ListElementIsEmpty" xml:space="preserve">
+    <value>Lista Elementów jest pusta...</value>
+  </data>
   <data name="Monuments" xml:space="preserve">
     <value>Zabytki</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Przenieś niżej</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Przenieś wyżej</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nie</value>
   </data>
   <data name="PleaseWaitLoadingData" xml:space="preserve">
     <value>Trwa Ładowanie danych
@@ -162,5 +192,8 @@
   </data>
   <data name="Tourism" xml:space="preserve">
     <value>Turystyka</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Tak</value>
   </data>
 </root>

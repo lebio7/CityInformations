@@ -50,6 +50,22 @@ namespace CityInformationsApp.Models
             await LocationNotExist();
         }
 
+        public void RemoveLocation(long elementId)
+        {
+            if (SelectedLocations.Contains(elementId))
+            {
+                SelectedLocations.Remove(elementId);
+            }
+        }
+
+        public void InitListAfterChange(List<long> newList)
+        {
+            if (newList?.Count > 0)
+            {
+                SelectedLocations = new List<long>(newList);
+            }
+        }
+
         private void InitPopUp()
         {
             popUpExist = new ImageAndTextPopUp(BaseApplication.applicationModel.GetValueFromResourceManager(Utils.Constants.ElementExist), Constants.ElementExist);

@@ -16,6 +16,13 @@
         public const string PleaseWaitLoadingData = nameof(PleaseWaitLoadingData);
         public const string ElementExist = nameof(ElementExist);
         public const string ElementNotExist = nameof(ElementNotExist);
+        public const string ListElementIsEmpty = nameof(ListElementIsEmpty);
+        public const string AreYouArchievedTargetPlace = nameof(AreYouArchievedTargetPlace);
+        public const string No = nameof(No);
+        public const string Yes = nameof(Yes);
+        public const string NumberPhone = nameof(NumberPhone);
+        public const string GoBack = nameof(GoBack);
+        public const string AddToRoute = nameof(AddToRoute);
 
         public class DateTimeExtension
         {

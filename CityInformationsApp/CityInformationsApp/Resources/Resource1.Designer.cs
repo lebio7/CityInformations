@@ -79,11 +79,47 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj do trasy.
+        /// </summary>
+        internal static string AddToRoute {
+            get {
+                return ResourceManager.GetString("AddToRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wszystkie.
         /// </summary>
         internal static string All {
             get {
                 return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Czy udało Ci się dotrzeć do:.
+        /// </summary>
+        internal static string AreYouArchievedTargetPlace {
+            get {
+                return ResourceManager.GetString("AreYouArchievedTargetPlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Samochodem.
+        /// </summary>
+        internal static string ByCar {
+            get {
+                return ResourceManager.GetString("ByCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pieszo.
+        /// </summary>
+        internal static string ByWalk {
+            get {
+                return ResourceManager.GetString("ByWalk", resourceCulture);
             }
         }
         
@@ -124,6 +160,24 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cofnij.
+        /// </summary>
+        internal static string GoBack {
+            get {
+                return ResourceManager.GetString("GoBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przejdź do wybranych lokalizacji.
+        /// </summary>
+        internal static string GoToSelectedLocations {
+            get {
+                return ResourceManager.GetString("GoToSelectedLocations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zdrowie.
         /// </summary>
         internal static string Health {
@@ -133,11 +187,47 @@ namespace CityInformationsApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lista Elementów jest pusta....
+        /// </summary>
+        internal static string ListElementIsEmpty {
+            get {
+                return ResourceManager.GetString("ListElementIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zabytki.
         /// </summary>
         internal static string Monuments {
             get {
                 return ResourceManager.GetString("Monuments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przenieś niżej.
+        /// </summary>
+        internal static string MoveDown {
+            get {
+                return ResourceManager.GetString("MoveDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przenieś wyżej.
+        /// </summary>
+        internal static string MoveUp {
+            get {
+                return ResourceManager.GetString("MoveUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nie.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -184,6 +274,15 @@ namespace CityInformationsApp.Resources {
         internal static string Tourism {
             get {
                 return ResourceManager.GetString("Tourism", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tak.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

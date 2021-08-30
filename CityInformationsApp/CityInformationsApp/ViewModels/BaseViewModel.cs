@@ -46,8 +46,7 @@ namespace CityInformationsApp.ViewModels
             });
         }
 
-
-        private async void GoBackCommand()
+        public async void GoBackCommand()
         {
            await Shell.Current.Navigation.PopAsync();
         }

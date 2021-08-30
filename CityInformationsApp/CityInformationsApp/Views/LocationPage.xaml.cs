@@ -19,6 +19,11 @@ namespace CityInformationsApp.Views
             GenerateButtonsSortView();
         }
 
+        protected override async void OnAppearing()
+        {
+            viewModel?.IsVisibleFavouriteButton();
+        }
+
         public void GenerateButtonsSortView()
         {
             viewModel?.SortButtonBuilder.Build(SortButtons);

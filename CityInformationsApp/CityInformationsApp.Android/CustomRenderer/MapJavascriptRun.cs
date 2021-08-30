@@ -23,12 +23,19 @@ namespace CityInformationsApp.Droid.CustomRenderer
 
         [Export]
         [Android.Webkit.JavascriptInterface]
-        public void AddToLocationToNavigate(long idLocation)
+        public void AddToLocationToNavigate(string idLocation)
         {
-           if (idLocation != 0)
-           {
-               Utils.BaseApplication.applicationModel.SelectedLocations.AddNewLocation(idLocation);
-           }
+            if (!string.IsNullOrEmpty(idLocation) && long.TryParse(idLocation, out long location))
+            {
+                if (Owner != null)
+                {
+                    Owner.AddLocation(location);
+                }
+                else
+                {
+                    Utils.BaseApplication.applicationModel.SelectedLocations.AddNewLocation(location);
+                }
+            }
         }
 
         [Export]

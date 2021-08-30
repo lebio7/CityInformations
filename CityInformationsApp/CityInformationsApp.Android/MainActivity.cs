@@ -4,11 +4,12 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Rg.Plugins.Popup.Contracts;
 
 namespace CityInformationsApp.Droid
 {
-    [Activity(Label = "CityInformationsApp",
-        Icon = "@mipmap/icon",
+    [Activity(Label = "Aplikacja-Siewierz",
+        Icon = "@drawable/Icon",
         Theme = "@style/MainTheme",
         MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
@@ -55,6 +56,18 @@ namespace CityInformationsApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override async void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                IPopupNavigation navigation = Rg.Plugins.Popup.Services.PopupNavigation.Instance;
+                if (navigation != null && navigation.PopupStack?.Count > 0)
+                {
+                    await navigation.PopAsync(animate: true);
+                }
+            }
         }
     }
 }

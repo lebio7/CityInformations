@@ -1,9 +1,4 @@
-﻿using CityInformationsApp.Utils;
-using CityInformationsApp.Utils.CustomRenderer;
-using CityInformationsApp.ViewModels;
-using System;
-using System.IO;
-using System.Reflection;
+﻿using CityInformationsApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,8 +13,10 @@ namespace CityInformationsApp.Views
         public MapPage()
         {
             InitializeComponent();
-            
-            viewModel = new MapPageViewModel(new CustomMapProvider(webView, Utils.TestData.TestLocationData));
+
+            viewModel = new MapPageViewModel(webView);
+
+            BindingContext = viewModel;
         }
 
         protected override async void OnAppearing()
@@ -35,6 +32,7 @@ namespace CityInformationsApp.Views
             }
 
             viewModel?.ReloadMapPins();
+            viewModel?.IsVisibleFavouriteButton();
         }
 
         public void GenerateButtonsSortView()

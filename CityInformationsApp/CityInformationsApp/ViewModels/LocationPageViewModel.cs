@@ -1,14 +1,16 @@
 ﻿using CityInformationsApp.Models;
 using CityInformationsApp.Utils;
+using CityInformationsApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace CityInformationsApp.ViewModels
 {
-    public class LocationPageViewModel 
+    public class LocationPageViewModel
         : BaseViewModel
     {
         #region Members 
@@ -35,6 +37,16 @@ namespace CityInformationsApp.ViewModels
             }
         }
 
+        public bool IsButtonFavouriteVisible
+        {
+            get
+            {
+                return BaseApplication.applicationModel?.SelectedLocations?.SelectedLocations?.Count > 0;
+            }
+        }
+
+        public ICommand GoToFavouriteList { get; private set; }
+
         public SortButtonBuilder SortButtonBuilder { get; private set; }
 
         #endregion
@@ -47,11 +59,24 @@ namespace CityInformationsApp.ViewModels
             LocationList = new ObservableCollection<LocationModel>();
             SortButtonBuilder = new SortButtonBuilder(SortByEventButton);
             PrepareData();
+
+            GoToFavouriteList = new Command(FavouriteListButton);
         }
 
         #endregion
 
         #region Methods
+
+        public async void FavouriteListButton()
+        {
+            FavouriteLocationListPage page = new FavouriteLocationListPage();
+            await Shell.Current.Navigation.PushModalAsync(page);
+        }
+
+        public void IsVisibleFavouriteButton()
+        {
+            OnPropertyChanged(nameof(IsButtonFavouriteVisible));
+        }
 
         private void PrepareData()
         {
@@ -92,6 +117,8 @@ namespace CityInformationsApp.ViewModels
                 {
                     Utils.BaseApplication.applicationModel.SelectedLocations.AddNewLocation(locationPin.Pin.ElementId);
                 }
+
+                IsVisibleFavouriteButton();
             }
         }
 

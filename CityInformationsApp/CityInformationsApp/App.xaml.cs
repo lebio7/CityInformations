@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using System.Linq;
+using CityInformationsApp.Views;
 
 namespace CityInformationsApp
 {
@@ -21,6 +23,12 @@ namespace CityInformationsApp
 
         protected override void OnResume()
         {
+            Page lastPage = Shell.Current?.Navigation?.ModalStack?.LastOrDefault();
+
+            if (lastPage != null && lastPage is FavouriteLocationListPage favouritePage)
+            {
+                favouritePage.ShowPopUpIfUserComeBackFromNavigation();
+            }
         }
     }
 }

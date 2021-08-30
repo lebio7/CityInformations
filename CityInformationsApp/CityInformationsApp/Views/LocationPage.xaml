@@ -11,8 +11,11 @@
                     <RowDefinition Height="auto"/>
                     <!--Lista-->
                     <RowDefinition Height="*"/>
+                    <!--Przejscie do lokalizacji ulubionych-->
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-
+                
+                <!--Filtrowanie-->
                 <StackLayout Margin="0, 8, 0, 0"  Grid.Row="0" >
                     <FlexLayout Direction="Row" Wrap="Wrap"  AlignItems="Center" JustifyContent="SpaceBetween" Margin="4" x:Name="SortButtons">
                     </FlexLayout>
@@ -88,6 +91,9 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
+
+                <!--Przejscie do lokalizacji ulubionych-->
+                <Button IsVisible="{Binding IsButtonFavouriteVisible}" Command="{Binding GoToFavouriteList}" Text="{localImage:Translate GoToSelectedLocations}" FontFamily="RalewayRegular" FontSize="12" CornerRadius="25" Grid.Row="2" Margin="0,8,0,8" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="200" BackgroundColor="{StaticResource Green}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

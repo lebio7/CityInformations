@@ -6,24 +6,23 @@ using Xamarin.Forms.Xaml;
 namespace CityInformationsApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    public partial class ImageAndTextPopUp : PopupPage
+    public partial class MoveElementPopUpPage : PopupPage
     {
-        private ImageAndTextPopUpViewModel viewModel;
+        private MoveElementPopUpViewModel viewModel;
 
-        public ImageAndTextPopUp(string textToDisplay, string imageToDisplay = null, bool imageIsAnimated = false)
+        public MoveElementPopUpPage()
         {
             InitializeComponent();
 
-            viewModel = new ImageAndTextPopUpViewModel(textToDisplay, imageToDisplay, imageIsAnimated);
+            viewModel = new MoveElementPopUpViewModel();
             BindingContext = viewModel;
         }
 
         #region Show/Close PopUp
 
-        public async Task ShowAlert(bool animate = true)
+        public async Task<int> ShowAlert(bool animate = true)
         {
-            await viewModel.ShowPopUp(this, animate);
+           return await viewModel.ShowAlertAsync(this, animate);
         }
 
         public void CloseAllPopup(bool animation = true)

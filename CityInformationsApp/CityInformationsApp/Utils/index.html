@@ -74,7 +74,11 @@
         function newMarkerWithOwnIcon(lat, lon, texto, ownIcon)
         {
             var selectedIcon = correctIcon(ownIcon);
-            var marker = L.marker([lat.toString(), lon.toString()], { icon: selectedIcon }).bindPopup(texto)
+            var marker = L.marker([lat.toString(), lon.toString()], { customId: texto, icon: selectedIcon }).on('click', function (e) {
+                CSharp.AddToLocationToNavigate(this.options.customId)
+            });
+            
+
             markerGroup.addLayer(marker);
         }
 
@@ -130,7 +134,6 @@
         var LocationIcon = L.icon({
             iconUrl: 'MapLocation.png',
             shadowUrl: 'marker-shadow.png',
-
             iconSize: [IconWidth, IconHeight], // size of the icon
             shadowSize: [41, 41], // size of the shadow
             iconAnchor: [12, 41], // point of the icon which will correspond to marker's location

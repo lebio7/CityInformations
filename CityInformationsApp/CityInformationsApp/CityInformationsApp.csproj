@@ -10,6 +10,8 @@
     <None Remove="Resources\Fonts\Raleway-SemiBold.ttf" />
     <None Remove="Resources\Images\AddToListIcon.png" />
     <None Remove="Resources\Images\Audio.png" />
+    <None Remove="Resources\Images\ByCar.png" />
+    <None Remove="Resources\Images\ByWalk.png" />
     <None Remove="Resources\Images\Calendar.png" />
     <None Remove="Resources\Images\Carousel1.png" />
     <None Remove="Resources\Images\Carousel2.png" />
@@ -29,6 +31,9 @@
     <None Remove="Resources\Images\GoNext.png" />
     <None Remove="Resources\Images\Hours.png" />
     <None Remove="Resources\Images\Location.png" />
+    <None Remove="Resources\Images\MoveDown.png" />
+    <None Remove="Resources\Images\MoveToListIcon.png" />
+    <None Remove="Resources\Images\MoveUp.png" />
     <None Remove="Resources\Images\NumberPhone.png" />
     <None Remove="Resources\Images\ObjectAccommodation.png" />
     <None Remove="Resources\Images\ObjectAll.png" />
@@ -40,6 +45,7 @@
     <None Remove="Resources\Images\ObjectSports.png" />
     <None Remove="Resources\Images\Price.png" />
     <None Remove="Resources\Images\RandomSiewierz1.png" />
+    <None Remove="Resources\Images\RemoveToListIcon.png" />
     <None Remove="Resources\Images\SiewierzLogo.png" />
     <None Remove="Resources\Images\Sports.png" />
     <None Remove="Resources\Images\Tourism.png" />
@@ -51,6 +57,8 @@
     <EmbeddedResource Include="Resources\Fonts\Raleway-SemiBold.ttf" />
     <EmbeddedResource Include="Resources\Images\AddToListIcon.png" />
     <EmbeddedResource Include="Resources\Images\Audio.png" />
+    <EmbeddedResource Include="Resources\Images\ByCar.png" />
+    <EmbeddedResource Include="Resources\Images\ByWalk.png" />
     <EmbeddedResource Include="Resources\Images\Calendar.png" />
     <EmbeddedResource Include="Resources\Images\Carousel1.png" />
     <EmbeddedResource Include="Resources\Images\Carousel2.png" />
@@ -70,6 +78,9 @@
     <EmbeddedResource Include="Resources\Images\GoNext.png" />
     <EmbeddedResource Include="Resources\Images\Hours.png" />
     <EmbeddedResource Include="Resources\Images\Location.png" />
+    <EmbeddedResource Include="Resources\Images\MoveDown.png" />
+    <EmbeddedResource Include="Resources\Images\MoveToListIcon.png" />
+    <EmbeddedResource Include="Resources\Images\MoveUp.png" />
     <EmbeddedResource Include="Resources\Images\NumberPhone.png" />
     <EmbeddedResource Include="Resources\Images\ObjectAccommodation.png" />
     <EmbeddedResource Include="Resources\Images\ObjectAll.png" />
@@ -81,6 +92,7 @@
     <EmbeddedResource Include="Resources\Images\ObjectSports.png" />
     <EmbeddedResource Include="Resources\Images\Price.png" />
     <EmbeddedResource Include="Resources\Images\RandomSiewierz1.png" />
+    <EmbeddedResource Include="Resources\Images\RemoveToListIcon.png" />
     <EmbeddedResource Include="Resources\Images\SiewierzLogo.png" />
     <EmbeddedResource Include="Resources\Images\Sports.png" />
     <EmbeddedResource Include="Resources\Images\Tourism.png" />
@@ -113,7 +125,13 @@
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\AlertImagePopUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\AnnouncementsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FavouriteLocationListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HomePage.xaml">
@@ -129,6 +147,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MoveElementPopUpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using CityInformationsApp.Utils.CustomRenderer;
 using CityInformationsApp.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,18 +23,27 @@ namespace CityInformationsApp.Utils
         #region Members
 
         private IWebViewCustom webViewCustom;
-        private List<CustomPin> allPins;
+        
         private string navigateText;
+        private double latitude;
+        private double longtitude;
+
+        #endregion
+
+        #region Properties
+
+        public List<CustomPin> AllPins { get; set; }
 
         #endregion
 
         #region Ctor
 
-        public CustomMapProvider(IWebViewCustom webViewCustom, List<CustomPin> pins)
+        public CustomMapProvider(IWebViewCustom webViewCustom, List<CustomPin> pins, Action<long> refreshView)
         {
+            webViewCustom.RefreshView = refreshView;
             this.webViewCustom = webViewCustom;
-            allPins = pins;
 
+            AllPins = pins;
             navigateText = BaseApplication.applicationModel.GetValueFromResourceManager(Utils.Constants.AddToLocationsList);
         }
 
@@ -69,18 +79,20 @@ namespace CityInformationsApp.Utils
 
             await Task.Delay(TimeWaitAfterStartMap);
 
-            LoadPinsInMap(allPins);
+            LoadPinsInMap(AllPins);
+
+            await LoadCustomPosition();
         }
 
         public void SortCustomPins(Enums.ObjectLocation sortButton)
         {
             if (sortButton == Enums.ObjectLocation.All)
             {
-                LoadPinsInMap(allPins);
+                LoadPinsInMap(AllPins);
             }
             else
             {
-                LoadPinsInMap(allPins.Where(x => x.EnumName == (int)sortButton).ToList());
+                LoadPinsInMap(AllPins.Where(x => x.EnumName == (int)sortButton).ToList());
             }
         }
 
@@ -91,6 +103,26 @@ namespace CityInformationsApp.Utils
             await Task.Delay(TimeWaitAfterStartMap);
 
             SortCustomPins(sortButton);
+        }
+
+        public async Task LoadCustomPosition()
+        {
+            try
+            {
+                Xamarin.Essentials.Location location = await Xamarin.Essentials.Geolocation.GetLocationAsync();
+
+                if (location != null && location.Latitude != 0 && location.Longitude != 0)
+                {
+                    latitude = location.Latitude;
+                    longtitude = location.Longitude;
+                    CenterMap(location.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), location.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                }
+            }
+            catch(Exception ex)
+            {
+                latitude = 0;
+                longtitude = 0;
+            }
         }
 
         private void LoadPinsInMap(List<CustomPin> pinsToShow)
@@ -111,6 +143,11 @@ namespace CityInformationsApp.Utils
         private void Show()
         {
             webViewCustom.Eval(@"show()");
+
+            if (latitude != 0 && longtitude != 0)
+            {
+                CenterMap(latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), longtitude.ToString(System.Globalization.CultureInfo.InvariantCulture));
+            }
         }
 
         private void ClearMarker()
@@ -175,8 +212,8 @@ namespace CityInformationsApp.Utils
             sb.Append($"<br>");
             sb.Append($"<u>{pin.Address}</u>");
             sb.Append(string.Format(@"<button class=\'directionButton\' onClick=\'CSharp.AddToLocationToNavigate({0})\'>{1} <img src=\'{2}\' /></button>", pin.ElementId.ToString(), navigateText, DirectionIcon));
-
-            NewMarkerWithOwnIcon(pin.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), pin.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture), sb.ToString(), pin.EnumName.ToString());
+            //NewMarkerWithOwnIcon(pin.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), pin.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture), sb.ToString(), pin.EnumName.ToString());
+            NewMarkerWithOwnIcon(pin.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture), pin.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture), pin.ElementId.ToString(), pin.EnumName.ToString());
         }
 
         #endregion

@@ -7,6 +7,8 @@ namespace CityInformationsApp.Models
     public class LocationModel
     {
         public ICommand AddToFavourite { get; set; }
+        public ICommand MoveToListIcon { get; set; }
+        public ICommand RemoveToListIcon { get; set; }
 
         public string Title { get; private set; }
 
