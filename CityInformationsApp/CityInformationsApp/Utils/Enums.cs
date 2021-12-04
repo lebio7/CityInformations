@@ -4,10 +4,10 @@
     {
         public enum Events
         {
-            All,
-            Culture,
-            Sport,
-            Tourism,
+            All = 0,
+            Culture = 1,
+            Sport = 2,
+            Tourism = 3,
         }
 
         public enum ObjectLocation
