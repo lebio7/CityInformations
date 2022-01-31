@@ -32,14 +32,6 @@ namespace CityInformationsApp.Utils
             "poczęstunek, który przygotowała dla nas pobliska Cukiernia Płomyczek. Bardzo dziękujemy za hojne dary oraz mamy nadzieje na nawiązanie dłuższej współpracy. Zgodnie ze zwyczajem na koniec Proboszcz udzieli wszystkim Błogosławieństwa" +
             "na następne dni tygodnia.";
 
-        public static List<InformationDetailsModel> testDetails = new List<InformationDetailsModel>
-        {
-            new InformationDetailsModel("Godzina rozpoczęcia:", new DateTime(2021, 04, 22, 15, 30, 10).ToString(Constants.DateTimeExtension.DateTimeCreated)),
-            new InformationDetailsModel("Cena:", "Za darmo"),
-            new InformationDetailsModel("Miejsce:", "Boisko sportowe"),
-            new InformationDetailsModel("Strój obowiązujący na wydarzenie:", "Galowy(czytaj, nie dres sportowy, jeansy, buty halówki, trampki, korki) wymagane buty garnituowe"),
-        };
-
         public static string TitleAbout = "Miejski ośrodek kultury Siewierz";
         public static string Location = "ul. Słowackiego 2a\n42-470 Siewierz";
         public static string Hours = "Dni Tygodnia - 8:30 - 18:00 \nDni wolne - 8:30 - 19:00";

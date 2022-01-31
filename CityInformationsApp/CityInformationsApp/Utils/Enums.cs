@@ -2,24 +2,30 @@
 {
     public class Enums
     {
+        /// <summary>
+        /// event compatible with Event => DBO
+        /// </summary>
         public enum Events
         {
-            All = 0,
-            Culture = 1,
-            Sport = 2,
-            Tourism = 3,
+            All = 1,
+            Culture = 2,
+            Sport = 3,
+            Tourism = 4,
         }
 
+        /// <summary>
+        /// object location compatible with object location => dbo
+        /// </summary>
         public enum ObjectLocation
         {
-            All = 0,
-            Shops = 1,
-            Restaurant = 2,
-            Health = 3,
-            Education = 4,
-            Accommodation = 5,
-            Sport = 6,
-            Monuments = 7, 
+            All = 1,
+            Shops = 2,
+            Restaurant = 3,
+            Health = 4,
+            Education = 5,
+            Accommodation = 6,
+            Sport = 7,
+            Monuments = 8, 
         }
     }
 }
