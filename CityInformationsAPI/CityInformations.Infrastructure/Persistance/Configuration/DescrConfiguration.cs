@@ -13,9 +13,9 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName(nameof(Descr.Id).ToUpper());
-            entity.Property(e => e.Descrpiton)
+            entity.Property(e => e.Description)
                 .IsUnicode(false)
-                .HasColumnName(nameof(Descr.Descrpiton).ToUpper());
+                .HasColumnName(nameof(Descr.Description).ToUpper());
             entity.Property(e => e.LanguageId).HasColumnName(nameof(Descr.LanguageId).ToUpper());
             entity.Property(e => e.MainDescrId).HasColumnName(nameof(Descr.MainDescrId).ToUpper());
 

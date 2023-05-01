@@ -8,7 +8,7 @@ namespace CityInformations.Domain.Entities
 
         public int MainDescrId { get; set; }
 
-        public string Descrpiton { get; set; }
+        public string Description { get; set; }
 
         public int LanguageId { get; set; }
 
