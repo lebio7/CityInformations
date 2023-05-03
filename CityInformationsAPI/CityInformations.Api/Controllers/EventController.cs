@@ -26,5 +26,15 @@ namespace CityInformations.Api.Controllers
                 return HandleException(ex);
             }
         }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllItems()
+        {
+            var results =  await GetMediatorInstance.Send(new GetAllItemsQuery());
+
+            return results?.Count > 0
+                ? Ok(results)
+                : NoContent();
+        }
     }
 }
