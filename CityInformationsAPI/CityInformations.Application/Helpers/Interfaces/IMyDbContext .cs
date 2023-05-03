@@ -14,5 +14,6 @@ namespace CityInformations.Application.Helpers.Interfaces
         DbSet<LocationDate> LocationDates { get; set; }
         DbSet<NewsDate> NewsDates { get; set; }
         DbSet<ObjectLocation> ObjectLocations { get; set; }
+        DbSet<News> News { get; set; }
     }
 }

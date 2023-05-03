@@ -9,6 +9,7 @@ namespace CityInformations.Application.Helpers.MapperExtensions
         public MapperProfile()
         {
             CreateMap<Event, EventDto>();
+            CreateMap<News, NewsDto>();
         }
     }
 }

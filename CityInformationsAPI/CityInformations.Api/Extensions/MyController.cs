@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CityInformations.Api.Extensions
 {
+    [Route("restapi/[controller]")]
+    [ApiController]
     public class MyController : ControllerBase
     {
         public IMediator GetMediatorInstance

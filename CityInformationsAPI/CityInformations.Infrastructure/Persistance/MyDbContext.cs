@@ -21,6 +21,7 @@ namespace CityInformations.Infrastructure.Persistance
         public DbSet<News> NewsItems { get; set; }
         public DbSet<NewsDate> NewsDates { get; set; }
         public DbSet<ObjectLocation> ObjectLocations { get; set; }
+        public DbSet<News> News { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
