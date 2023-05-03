@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Domain", "CityInformation.Domain\CityInformations.Domain.csproj", "{E70BCF5F-9A41-413C-A078-E7436B301F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Domain", "CityInformation.Domain\CityInformations.Domain.csproj", "{E70BCF5F-9A41-413C-A078-E7436B301F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Infrastructure", "CityInformations.Infrastructure\CityInformations.Infrastructure.csproj", "{28CB2686-70F0-469B-AF6C-A1CA5EB7A709}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Infrastructure", "CityInformations.Infrastructure\CityInformations.Infrastructure.csproj", "{28CB2686-70F0-469B-AF6C-A1CA5EB7A709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Api", "CityInformations.Api\CityInformations.Api.csproj", "{B2027504-1203-46EB-A389-ECEC806416E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Api", "CityInformations.Api\CityInformations.Api.csproj", "{B2027504-1203-46EB-A389-ECEC806416E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Application", "CityInformations.Application\CityInformations.Application.csproj", "{645FD69F-560A-4798-BDEC-D492FFE62030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Application", "CityInformations.Application\CityInformations.Application.csproj", "{645FD69F-560A-4798-BDEC-D492FFE62030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Shared", "CityInformations.Shared\CityInformations.Shared.csproj", "{EC9BF723-11A5-4675-A5AE-A90528853F60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{645FD69F-560A-4798-BDEC-D492FFE62030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645FD69F-560A-4798-BDEC-D492FFE62030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645FD69F-560A-4798-BDEC-D492FFE62030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

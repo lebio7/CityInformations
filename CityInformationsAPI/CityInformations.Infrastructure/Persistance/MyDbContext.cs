@@ -1,10 +1,11 @@
-﻿using CityInformations.Domain.Entities;
+﻿using CityInformations.Application.Helpers.Interfaces;
+using CityInformations.Domain.Entities;
 using CityInformations.Infrastructure.Persistance.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace CityInformations.Infrastructure.Persistance
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : DbContext, IMyDbContext
     {
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
@@ -33,6 +34,7 @@ namespace CityInformations.Infrastructure.Persistance
             modelBuilder.ApplyConfiguration(new NewsDateConfiguration());
             modelBuilder.ApplyConfiguration(new ObjectLocationConfiguration());
             modelBuilder.ApplyConfiguration(new TypeDateConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }
