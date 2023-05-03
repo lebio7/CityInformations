@@ -21,6 +21,10 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName(nameof(TypeDate.Name).ToUpper());
+
+            entity.HasOne(o => o.Descr)
+                .WithMany()
+                .HasForeignKey(o => o.IdDescr);
         }
     }
 }

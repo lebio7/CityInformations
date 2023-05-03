@@ -1,6 +1,6 @@
-﻿namespace CityInformations.Domain.Entities
+﻿namespace CityInformations.Shared.DTO
 {
-    public class NewsDate
+    public class NewsDateDto
     {
         public int Id { get; set; }
 
@@ -10,8 +10,6 @@
 
         public string Value { get; set; }
 
-        public virtual News News { get; set; }
-
-        public virtual TypeDate TypeDate { get; set; }
+        public TypeDateDto TypeDate { get; set; }
     }
 }

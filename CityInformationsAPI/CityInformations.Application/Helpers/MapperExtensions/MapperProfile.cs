@@ -10,6 +10,9 @@ namespace CityInformations.Application.Helpers.MapperExtensions
         {
             CreateMap<Event, EventDto>();
             CreateMap<News, NewsDto>();
+            CreateMap<NewsDate, NewsDateDto>();
+            CreateMap<TypeDate, TypeDateDto>();
+            CreateMap<Descr, DescrDto>();
         }
     }
 }

@@ -23,6 +23,10 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
             entity.Property(e => e.Title)
                 .IsUnicode(false)
                 .HasColumnName(nameof(News.Title).ToUpper());
+
+            entity.HasMany(x => x.NewsDates)
+                .WithOne(x => x.News)
+                .HasForeignKey(x => x.NewsId);
         }
     }
 }

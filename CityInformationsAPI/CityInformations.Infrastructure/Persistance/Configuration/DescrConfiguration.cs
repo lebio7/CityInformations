@@ -18,11 +18,6 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
                 .HasColumnName(nameof(Descr.Description).ToUpper());
             entity.Property(e => e.LanguageId).HasColumnName(nameof(Descr.LanguageId).ToUpper());
             entity.Property(e => e.MainDescrId).HasColumnName(nameof(Descr.MainDescrId).ToUpper());
-
-
-            entity.HasOne(o => o.Language)
-            .WithMany()
-            .HasForeignKey(o => o.LanguageId);
         }
     }
 }

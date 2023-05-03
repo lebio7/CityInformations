@@ -13,5 +13,7 @@ namespace CityInformations.Domain.Entities
         public int EventId { get; set; }
 
         public virtual Event Event { get; set; }
+
+        public List<NewsDate> NewsDates { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace CityInformations.Domain.Entities
 
         public int IdDescr { get; set; }
 
-        public virtual List<Descr> Descr { get; set; }
+        public virtual Descr Descr { get; set; }
     }
 }

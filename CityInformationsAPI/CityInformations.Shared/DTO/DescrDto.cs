@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CityInformations.Domain.Entities
+﻿namespace CityInformations.Shared.DTO
 {
-    public class Descr
+    public class DescrDto
     {
         public int Id { get; set; }
 
