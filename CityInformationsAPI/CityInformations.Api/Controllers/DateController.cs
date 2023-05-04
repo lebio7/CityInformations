@@ -26,5 +26,26 @@ namespace CityInformations.Api.Controllers
                 return HandleException(ex);
             }
         }
+
+
+        /// <summary>
+        /// Get date collection by typeDateIds
+        /// </summary>
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetByTypeDatesId([FromBody] GetByTypeDatesIdQuery query)
+        {
+            try
+            {
+                var result = await GetMediatorInstance.Send(query);
+
+                return result?.Count > 0
+                    ? Ok(result)
+                    : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }
