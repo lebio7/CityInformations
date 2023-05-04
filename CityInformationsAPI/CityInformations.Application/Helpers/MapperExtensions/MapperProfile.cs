@@ -13,6 +13,7 @@ namespace CityInformations.Application.Helpers.MapperExtensions
             CreateMap<NewsDate, NewsDateDto>();
             CreateMap<TypeDate, TypeDateDto>();
             CreateMap<Descr, DescrDto>();
+            CreateMap<Date, DateDto>();
         }
     }
 }
