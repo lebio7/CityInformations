@@ -14,6 +14,9 @@ namespace CityInformations.Application.Helpers.MapperExtensions
             CreateMap<TypeDate, TypeDateDto>();
             CreateMap<Descr, DescrDto>();
             CreateMap<Date, DateDto>();
+            CreateMap<Location, LocationDto>();
+            CreateMap<ObjectLocation, ObjectLocationDto>();
+            CreateMap<LocationDate, LocationDateDto>();
         }
     }
 }

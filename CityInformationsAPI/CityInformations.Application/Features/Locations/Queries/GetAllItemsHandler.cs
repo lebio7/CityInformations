@@ -7,9 +7,9 @@ using CityInformations.Shared.DTO;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace CityInformations.Application.Features.Newses.Queries
+namespace CityInformations.Application.Features.Locations.Queries
 {
-    public class GetAllItemsQuery : IRequest<CollectionListWithPagination<NewsDto>>
+    public class GetAllItemsQuery : IRequest<CollectionListWithPagination<LocationDto>>
     {
         public int Limit { get; set; }
 
@@ -27,35 +27,32 @@ namespace CityInformations.Application.Features.Newses.Queries
         }
     }
 
-    public class GetAllItemsHandler : IRequestHandler<GetAllItemsQuery, CollectionListWithPagination<NewsDto>>
+    public class GetAllItemsHandler : IRequestHandler<GetAllItemsQuery, CollectionListWithPagination<LocationDto>>
     {
         private readonly IMyDbContext myDbContext;
         private readonly IMapper mapper;
 
-        public GetAllItemsHandler(IMyDbContext myDbContext,
-            IMapper mapper)
+        public GetAllItemsHandler(IMyDbContext myDbContext, IMapper mapper)
         {
             this.myDbContext = myDbContext;
             this.mapper = mapper;
         }
 
-        public async Task<CollectionListWithPagination<NewsDto>> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
+        public async Task<CollectionListWithPagination<LocationDto>> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
         {
-            var query = myDbContext.News.Where(x =>
-            (string.IsNullOrEmpty(request.Search) || x.Title.ToUpper().Contains(request.Search.Trim().ToUpper())));
+            var query = myDbContext.Locations.Where(x =>
+            (string.IsNullOrEmpty(request.Search) || x.Name.ToUpper().Contains(request.Search.Trim().ToUpper())));
 
             int total = query.Count();
 
-            var results = await query.OrderByDescending(x => x.CreatedDate)
-                .ThenBy(x => x.EventId)
-                .ThenBy(x => x.Title)
+            var results = await query.OrderBy(x => x.Name)
                 .Skip(request.Offset)
                 .Take(request.Limit)
                 .AsNoTracking()
-                .ProjectTo<NewsDto>(mapper.ConfigurationProvider)
+                .ProjectTo<LocationDto>(mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
-            return new CollectionListWithPagination<NewsDto>()
+            return new CollectionListWithPagination<LocationDto>()
             {
                 Results = results,
                 Limit = request.Limit,

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CityInformations.Domain.Entities
+﻿namespace CityInformations.Domain.Entities
 {
     public class Location
     {
@@ -13,5 +11,7 @@ namespace CityInformations.Domain.Entities
         public string Address { get; set; }
 
         public virtual ObjectLocation ObjectLocation { get; set; }
+
+        public List<LocationDate> LocationDates { get; set; }
     }
 }

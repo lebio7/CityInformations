@@ -29,6 +29,10 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
             entity.HasOne(o => o.ObjectLocation)
               .WithMany()
               .HasForeignKey(o => o.ObjectLocationId);
+
+            entity.HasMany(x => x.LocationDates)
+               .WithOne(x => x.Location)
+               .HasForeignKey(x => x.LocationId);
         }
     }
 }
