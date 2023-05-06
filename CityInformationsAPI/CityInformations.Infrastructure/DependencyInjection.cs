@@ -1,5 +1,6 @@
 ﻿using CityInformations.Application.Helpers.Interfaces;
 using CityInformations.Infrastructure.Persistance;
+using CityInformations.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,9 @@ namespace CityInformations.Infrastructure
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IMyDbContext, MyDbContext>();
+            services.AddScoped<IWeatherCondition, WeatherCondition>();
+
+            services.AddTransient<HttpClient>();
 
             return services;
         }
