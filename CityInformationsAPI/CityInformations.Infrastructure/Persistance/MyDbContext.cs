@@ -22,6 +22,7 @@ namespace CityInformations.Infrastructure.Persistance
         public DbSet<NewsDate> NewsDates { get; set; }
         public DbSet<ObjectLocation> ObjectLocations { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<Weather> Weathers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +36,7 @@ namespace CityInformations.Infrastructure.Persistance
             modelBuilder.ApplyConfiguration(new NewsDateConfiguration());
             modelBuilder.ApplyConfiguration(new ObjectLocationConfiguration());
             modelBuilder.ApplyConfiguration(new TypeDateConfiguration());
+            modelBuilder.ApplyConfiguration(new WeatherConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
