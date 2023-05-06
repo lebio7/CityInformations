@@ -18,6 +18,7 @@ namespace CityInformations.Infrastructure
             services.AddScoped<IWeatherCondition, WeatherCondition>();
 
             services.AddTransient<HttpClient>();
+            services.AddSingleton<IDateTimeService, DateTimeService>();
 
             return services;
         }

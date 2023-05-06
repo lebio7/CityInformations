@@ -16,5 +16,7 @@ namespace CityInformations.Application.Helpers.Interfaces
         DbSet<ObjectLocation> ObjectLocations { get; set; }
         DbSet<News> News { get; set; }
         DbSet<Weather> Weathers { get; set; }
+
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
