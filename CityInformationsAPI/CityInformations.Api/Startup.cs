@@ -1,4 +1,5 @@
-﻿using CityInformations.Application.Features.Events.Queries;
+﻿using CityInformations.Api.Quartz;
+using CityInformations.Application.Features.Events.Queries;
 using CityInformations.Infrastructure;
 using MediatR;
 using MediatR.Registration;
@@ -25,6 +26,7 @@ namespace CityInformations.Api
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddAutoMapper(typeof(CityInformations.Application.Helpers.MapperExtensions.MapperProfile));
+            QuartzExtension.QuartzInstallation(services);
             services.AddInfrastructure(Configuration);
         }
 
