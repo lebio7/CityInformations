@@ -21,12 +21,14 @@
 6. Entity Framework
 7. AutoMapper
 8. Newtonsoft.Json
+9. MSSQL
 
 - Clean Code
 - SOLID
 - Clean Architecture
 - Modular Application
 - Installation Scripts
+- CQRS
 
 
 <h2><b>[ANGULAR] Application for admins</b><h2>
