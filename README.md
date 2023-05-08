@@ -26,6 +26,7 @@
 - SOLID
 - Clean Architecture
 - Modular Application
+- Installation Scripts
 
 
 <h2><b>[ANGULAR] Application for admins</b><h2>
