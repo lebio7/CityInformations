@@ -33,3 +33,5 @@
 
 <h2><b>[ANGULAR] Application for admins</b><h2>
 soon.....
+
+  
