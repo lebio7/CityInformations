@@ -11,7 +11,7 @@ namespace CityInformations.Infrastructure.Persistance.Configuration
             entity.ToTable("EVENT");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName(nameof(Event.Id).ToUpper());
             entity.Property(e => e.Name)
                 .HasMaxLength(400)

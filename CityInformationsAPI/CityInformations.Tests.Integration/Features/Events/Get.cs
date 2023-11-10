@@ -1,11 +1,18 @@
 ﻿using AutoMapper;
 using CityInformations.Application.Features.Events.Queries;
+using CityInformations.Infrastructure.Persistance;
 using FluentAssertions;
 
 namespace CityInformations.Tests.Integration.Features.Events
 {
     public class Get : BaseSetUp
     {
+        public MyDbContext DbContext { get; private set; }
+        public Get()
+        {
+            DbContext = CreateNewDbContext();
+        }
+
         [Fact]
         public async Task When_Table_Is_Empty_Then_Return_Empty_List()
         {

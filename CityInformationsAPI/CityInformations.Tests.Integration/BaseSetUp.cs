@@ -6,20 +6,15 @@ using NSubstitute;
 
 namespace CityInformations.Tests.Integration
 {
-    public class BaseSetUp : IDisposable
+    public class BaseSetUp
     {
-        protected readonly MyDbContext DbContext;
-
-        public BaseSetUp()
+        public MyDbContext CreateNewDbContext()
         {
             var options = new DbContextOptionsBuilder<MyDbContext>()
-                .UseInMemoryDatabase(databaseName: "InMemoryTestDatabase").Options;
-            DbContext = new MyDbContext(options);
-        }
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                .Options;
 
-        public void Dispose()
-        {
-            DbContext.Dispose();
+            return new MyDbContext(options);
         }
 
         public IMapper GetMockMapper()
