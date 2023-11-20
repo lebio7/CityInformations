@@ -1,5 +1,7 @@
 ﻿using CityInformations.Api.Extensions;
+using CityInformations.Application.Features.Events.Commands;
 using CityInformations.Application.Features.Events.Queries;
+using CityInformations.Shared.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,6 +37,36 @@ namespace CityInformations.Api.Controllers
             return results?.Count > 0
                 ? Ok(results)
                 : NoContent();
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Create(EventDto dto)
+        {
+            try
+            {
+                var result = await GetMediatorInstance.Send(new CreateCommand(dto));
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+
+        [HttpPut("[action]")]
+        public async Task<IActionResult> Update(EventDto dto)
+        {
+            try
+            {
+                var result = await GetMediatorInstance.Send(new UpdateCommand(dto));
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
         }
     }
 }

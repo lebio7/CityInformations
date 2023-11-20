@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Api", "Cit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Application", "CityInformations.Application\CityInformations.Application.csproj", "{645FD69F-560A-4798-BDEC-D492FFE62030}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Shared", "CityInformations.Shared\CityInformations.Shared.csproj", "{EC9BF723-11A5-4675-A5AE-A90528853F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityInformations.Shared", "CityInformations.Shared\CityInformations.Shared.csproj", "{EC9BF723-11A5-4675-A5AE-A90528853F60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E20BE4F-8DD4-4624-B77C-24D49BABA3BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityInformations.Tests.Integration", "CityInformations.Tests.Integration\CityInformations.Tests.Integration.csproj", "{01D19EE4-BE24-4C49-AB01-974225F65B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC9BF723-11A5-4675-A5AE-A90528853F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D19EE4-BE24-4C49-AB01-974225F65B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D19EE4-BE24-4C49-AB01-974225F65B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D19EE4-BE24-4C49-AB01-974225F65B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D19EE4-BE24-4C49-AB01-974225F65B2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01D19EE4-BE24-4C49-AB01-974225F65B2B} = {7E20BE4F-8DD4-4624-B77C-24D49BABA3BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEC2068B-9FE1-4A30-AA76-92C1A84F2949}

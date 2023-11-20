@@ -10,6 +10,7 @@ namespace CityInformations.Application.Helpers.MapperExtensions
         public MapperProfile()
         {
             CreateMap<Event, EventDto>();
+            CreateMap<EventDto, Event>();
             CreateMap<News, NewsDto>();
             CreateMap<NewsDate, NewsDateDto>();
             CreateMap<TypeDate, TypeDateDto>();
