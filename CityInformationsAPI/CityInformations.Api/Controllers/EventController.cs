@@ -53,5 +53,20 @@ namespace CityInformations.Api.Controllers
                 return HandleException(ex);
             }
         }
+
+        [HttpPut("[action]")]
+        public async Task<IActionResult> Update(EventDto dto)
+        {
+            try
+            {
+                var result = await GetMediatorInstance.Send(new UpdateCommand(dto));
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }
